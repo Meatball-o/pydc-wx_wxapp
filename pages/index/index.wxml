@@ -1,6 +1,6 @@
 <!--index.wxml-->
 <scroll-view>
   <view class="index_head">
-      <input type="text" class="index_head_txt" />
+      <input type="text" placeholder="请输入区域，版块或楼盘" class="index_head_txt"/>
   </view>
 </scroll-view>

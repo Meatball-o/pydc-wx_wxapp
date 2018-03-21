@@ -1,1 +1,2 @@
 /**app.wxss 公用css**/
+page{font-size:14px;}
