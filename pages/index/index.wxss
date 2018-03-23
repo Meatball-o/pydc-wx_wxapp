@@ -1,3 +1,4 @@
 /**index.wxss**/
-.index_head{width:750rpx;background:red;height:2.8rem;padding-top:20px;}
-.index_head .index_head_txt{width:80%;margin:0 auto;background:#fff;height:35px;border-radius: 99px;}
+.index_head{width:750rpx;background:red;height:150rpx;padding-top:40rpx;position: relative;}
+.index_head .index_head_txt{width:73%;background:#fff;height:70rpx;border-radius: 10rpx;position: absolute;left:10%; padding-left:7%;}
+.index_head button{height:70rpx; font-size:28rpx; position: absolute; right:10%; }

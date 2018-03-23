@@ -2,5 +2,6 @@
 <scroll-view>
   <view class="index_head">
       <input type="text" placeholder="请输入区域，版块或楼盘" class="index_head_txt"/>
+      <button>搜索</button>
   </view>
 </scroll-view>
