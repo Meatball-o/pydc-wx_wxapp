@@ -24,7 +24,7 @@
   <!--主体-->
   <div class="index-con" style="background-color: #fff">
     <ul class="index-con-t">
-      <li  wx:for="{{indexCon}}" wx:key="index">
+      <li  wx:for="{{dataList}}" wx:key="index">
         <image src="{{item.img}}"></image>
         <view class="index-con-c">
           <em class="index-con-title">{{item.title}}</em>

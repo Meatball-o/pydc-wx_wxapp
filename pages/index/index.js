@@ -4,13 +4,16 @@ const app = getApp()
 
 Page({
   data: {
+    paging: 0,
+    currPage: 1,//页码
+    totalPage: 5,// 总页码
     imgUrls: [
       'http://img02.tooopen.com/images/20150928/tooopen_sy_143912755726.jpg',
       'http://img06.tooopen.com/images/20160818/tooopen_sy_175866434296.jpg',
       'http://img06.tooopen.com/images/20160818/tooopen_sy_175833047715.jpg'
     ],
     indexNav: [
-      {img:"", text: 'unique_5'},
+      {img: "", text: 'unique_5'},
       {img: 4, text: 'unique_4'},
       {img: 3, text: 'unique_3'},
       {img: 2, text: 'unique_2'},
@@ -23,26 +26,26 @@ Page({
       {
         img: 'http://img02.tooopen.com/images/20150928/tooopen_sy_143912755726.jpg',
         title: '塘水围一区',
-        address:'民治地铁站',
-        price:'9999'
+        address: '民治地铁站',
+        price: '9999'
       },
       {
         img: 'http://img02.tooopen.com/images/20150928/tooopen_sy_143912755726.jpg',
         title: '塘水围一区',
-        address:'民治地铁站',
-        price:'9999'
+        address: '民治地铁站',
+        price: '9999'
       },
       {
         img: 'http://img02.tooopen.com/images/20150928/tooopen_sy_143912755726.jpg',
         title: '塘水围一区',
-        address:'民治地铁站',
-        price:'9999'
+        address: '民治地铁站',
+        price: '9999'
       },
       {
         img: 'http://img02.tooopen.com/images/20150928/tooopen_sy_143912755726.jpg',
         title: '塘水围一区',
-        address:'民治地铁站',
-        price:'9999'
+        address: '民治地铁站',
+        price: '9999'
       },
     ],
     indicatorDots: true,
@@ -50,7 +53,31 @@ Page({
     interval: 5000,
     duration: 500
   },
-  tapName: function(event) {
+  tapName: function (event) {
     console.log(event)
-  }
+  },
+  requestDataList: function () {
+    var vm =this;
+    wx.request({
+      method: "GET",
+      url: 'http://pydc.test.heiliuer.com/api/wxapp/house',
+      dataType: 'json',
+      data: {
+        page: vm.currPage,
+        total: vm.totalPage,
+      },
+      header: {
+        'content-type': 'application/json' // 默认值
+      },
+      success: function (res) {
+        var dataList = (res.dataList || []).concat(res.data.data.docs);
+        vm.totalPage = res.data.total;
+        vm.currPage += 1;
+        console.log(dataList)
+      }
+    })
+  },
+  onLoad: function () {
+    this.requestDataList()
+  },
 })
