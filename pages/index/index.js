@@ -22,32 +22,6 @@ Page({
       {img: 5, text: 'unique_5'},
       {img: 5, text: 'unique_5'},
     ],
-    indexCon: [
-      {
-        img: 'http://img02.tooopen.com/images/20150928/tooopen_sy_143912755726.jpg',
-        title: '塘水围一区',
-        address: '民治地铁站',
-        price: '9999'
-      },
-      {
-        img: 'http://img02.tooopen.com/images/20150928/tooopen_sy_143912755726.jpg',
-        title: '塘水围一区',
-        address: '民治地铁站',
-        price: '9999'
-      },
-      {
-        img: 'http://img02.tooopen.com/images/20150928/tooopen_sy_143912755726.jpg',
-        title: '塘水围一区',
-        address: '民治地铁站',
-        price: '9999'
-      },
-      {
-        img: 'http://img02.tooopen.com/images/20150928/tooopen_sy_143912755726.jpg',
-        title: '塘水围一区',
-        address: '民治地铁站',
-        price: '9999'
-      },
-    ],
     indicatorDots: true,
     autoplay: true,
     interval: 5000,
@@ -63,18 +37,18 @@ Page({
       url: 'http://pydc.test.heiliuer.com/api/wxapp/house',
       dataType: 'json',
       data: {
-        page: vm.currPage,
-        total: vm.totalPage,
+        page: vm.data.currPage,
+        total: vm.data.totalPage,
       },
       header: {
         'content-type': 'application/json' // 默认值
       },
       success: function (res) {
-        var dataList = (res.dataList || []).concat(res.data.data.docs);
+        var dataList = (vm.data.dataList || []).concat(res.data.data.docs);
         vm.setData(
           {
             dataList: dataList,
-            currPage: vm.currPage + 1,
+            currPage: vm.data.currPage + 1,
           }
         );
       }
@@ -82,5 +56,6 @@ Page({
   },
   onLoad: function () {
     this.requestDataList()
+
   },
 })

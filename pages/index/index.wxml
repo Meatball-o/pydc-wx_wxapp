@@ -1,5 +1,5 @@
 <!--search.wxml-->
-<scroll-view>
+<scroll-view scroll-y  bindscrolltolower="requestDataList" style="height: 500px;">
   <!--搜索-->
   <view class="index_head">
     <navigator class="index_head_txt" url="/pages/search/search" >请输入区域，版块或楼盘</navigator>
@@ -24,28 +24,28 @@
   <!--主体-->
   <div class="index-con" style="background-color: #fff">
     <ul class="index-con-t">
-      <li  wx:for="{{dataList}}" wx:key="index">
+      <li >
         <image src="{{item.coverImage.url}}"></image>
         <view class="index-con-c">
-          <em class="index-con-title">{{item.title}}</em>
-          <i class="index-con-address">{{item.address}}</i>
+          <em class="index-con-title">00</em>
+          <i class="index-con-address">00</i>
           <view class="index-con-price">
-            <em>均价¥</em> <i>{{item.averagePrice}}</i>
+            <em>均价¥</em> <i>00</i>
           </view>
         </view>
       </li>
     </ul>
     <ul class="index-con-m">
-      <li class="cf" wx:for="{{indexCon}}" wx:key="indexCon">
-        <image class="lf" src="{{item.img}}"></image>
-        <view class="index-con-mc rt">
-          <em class="index-con-mc-title">{{item.title}}</em>
-          <i class="index-con-mc-address">{{item.address}}</i>
-          <view class="index-con-mc-price">
-            <em>均价¥</em> <i>{{item.price}}</i>
+        <li class="cf" wx:for="{{dataList}}" wx:key="indexCon">
+          <image class="lf" src="{{item.coverImage.url}}"></image>
+          <view class="index-con-mc rt">
+            <em class="index-con-mc-title">{{item.name}}</em>
+            <i class="index-con-mc-address">{{item.mark}}</i>
+            <view class="index-con-mc-price">
+              <em>均价¥</em> <i>{{item.averagePrice}}</i>
+            </view>
           </view>
-        </view>
-      </li>
-    </ul>
+        </li>
+      </ul>
   </div>
 </scroll-view>
