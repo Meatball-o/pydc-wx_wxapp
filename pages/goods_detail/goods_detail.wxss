@@ -1,0 +1,77 @@
+.goods_detail swiper{
+  width: 750rpx;
+  height: 750rpx;
+}
+.goods_detail swiper image{
+  width: 750rpx;
+  height: 750rpx;
+}
+.goods-d-text{
+  width: 100%;
+  background-color: #fff;
+  margin: 16rpx 0;
+  border-top:1rpx solid #aaa ;
+  border-bottom:1rpx solid #aaa ;
+  padding: 12rpx 20rpx;
+  box-sizing: border-box;
+}
+.goods-d-text-title{
+  display: block;
+}
+.goods-d-text-big{
+  display: inline-block;
+  color: red;
+  font-size: 24rpx;
+  padding: 12rpx 0 20rpx 0;
+}
+.goods-d-price .goods-d-text-newp{
+  display: inline-block;
+  color: red;
+  font-size: 22rpx;
+  font-weight: bold;
+}
+.goods-d-price .goods-d-text-newp em{
+  font-size: 30rpx;
+}
+.goods-d-price .goods-d-text-oldp{
+  display: inline-block;
+  color: #aaa;
+  font-size: 22rpx;
+  padding-left: 16rpx;
+}
+.goods-d-text-pf{
+  margin-top: 20rpx;
+  width: 100%;
+  box-sizing: border-box;
+  height: 54rpx;
+  line-height: 60rpx;
+  border-top:1rpx solid #aaa;
+  color: #000;
+}
+.goods-d-text-pf i{
+  float: right;
+  color: #aaa;
+}
+.goods-d-text-pf em{
+  padding-right: 6rpx;
+  color: #aaa;
+  font-size: 22rpx;
+}
+.goods-detail-con{
+  background-color: #fff;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0 20rpx;
+  margin-top: 16rpx;
+}
+.goods-detail-con-title{
+  color: red;
+  border-bottom: 1rpx solid red;
+  text-align: center;
+  display: block;
+  height: 72rpx;
+  line-height: 72rpx;
+}
+
+
+

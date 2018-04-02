@@ -1,7 +1,10 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/my/my"
+    "pages/goods_detail/goods_detail",
+    "pages/goods/goods",
+    "pages/my/my",
+    "pages/search/search"
   ],
   "window": {
     "backgroundTextStyle": "light",

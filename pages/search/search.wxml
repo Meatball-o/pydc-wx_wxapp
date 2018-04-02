@@ -1,0 +1,7 @@
+<!--search.wxml-->
+<view class="search">
+  <view class="search-con cf">
+    <input class="lf" password type="number" placeholder="请输入关键字搜索"/>
+    <view class="lf">搜索</view>
+  </view>
+</view>

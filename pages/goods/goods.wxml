@@ -1,0 +1,23 @@
+<view class="body">
+  <view class="goods-nav bc_white">
+    <view class="{{selected?'goods-red':'goods-default'}}" bindtap="selected">销量</view>
+    <view class="{{selected1?'goods-red':'goods-default'}}" bindtap="selected1">价格</view>
+  </view>
+  <view class="{{selected?'goods-show':'goods-hidden'}}">
+    <div class="index-con" style="margin-top: 94rpx">
+      <ul class="index-con-t goods-list">
+        <li  wx:for="{{indexCon}}" wx:key="goodsCon">
+          <image src="{{item.img}}"></image>
+          <view class="index-con-c">
+            <em class="index-con-title">{{item.title}}</em>
+            <i class="index-con-address">{{item.address}}</i>
+            <view class="index-con-price">
+              <em>均价¥</em> <i>{{item.price}}</i>
+            </view>
+          </view>
+        </li>
+      </ul>
+    </div>
+  </view>
+  <view class="{{selected1?'goods-show':'goods-hidden'}}">for activity</view>
+</view>

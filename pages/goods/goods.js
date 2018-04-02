@@ -1,24 +1,10 @@
-//index.js
-//获取应用实例
-const app = getApp()
-
+/**
+ * Created by 丸子 on 2018-03-31.
+ */
 Page({
-  data: {
-    imgUrls: [
-      'http://img02.tooopen.com/images/20150928/tooopen_sy_143912755726.jpg',
-      'http://img06.tooopen.com/images/20160818/tooopen_sy_175866434296.jpg',
-      'http://img06.tooopen.com/images/20160818/tooopen_sy_175833047715.jpg'
-    ],
-    indexNav: [
-      {img:"", text: 'unique_5'},
-      {img: 4, text: 'unique_4'},
-      {img: 3, text: 'unique_3'},
-      {img: 2, text: 'unique_2'},
-      {img: 1, text: 'unique_1'},
-      {img: 0, text: 'unique_0'},
-      {img: 5, text: 'unique_5'},
-      {img: 5, text: 'unique_5'},
-    ],
+  data:{
+    selected:true,
+    selected1:false,
     indexCon: [
       {
         img: 'http://img02.tooopen.com/images/20150928/tooopen_sy_143912755726.jpg',
@@ -45,12 +31,17 @@ Page({
         price:'9999'
       },
     ],
-    indicatorDots: true,
-    autoplay: true,
-    interval: 5000,
-    duration: 500
   },
-  tapName: function(event) {
-    console.log(event)
-  }
+  selected:function(e){
+    this.setData({
+      selected1:false,
+      selected:true
+    })
+  },
+  selected1:function(e){
+    this.setData({
+      selected:false,
+      selected1:true
+    })
+  },
 })

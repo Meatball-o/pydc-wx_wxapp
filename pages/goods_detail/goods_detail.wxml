@@ -1,0 +1,35 @@
+<view class="goods_detail">
+  <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+    <block wx:for="{{imgUrls}}" wx:key="indexImgs">
+      <swiper-item>
+        <image src="{{item}}" class="slide-image"/>
+      </swiper-item>
+    </block>
+  </swiper>
+  <view class="goods-d-text">
+    <text class="goods-d-text-title">《黄金苑》</text>
+    <i class="goods-d-text-big">一房一厅48平 俩房俩厅68 79平</i>
+    <view class="goods-d-price">
+      <i class="goods-d-text-newp">均价¥<em>99999</em></i>
+      <view class="goods-d-text-oldp">
+        <i>均价¥<em>99999</em></i>
+      </view>
+      <view class="goods-d-text-pf cf">
+        <em>已选</em>
+        81-100
+        <i>》</i>
+      </view>
+    </view>
+  </view>
+  <view class="goods-detail-con">
+    <text class="goods-detail-con-title">图文详情</text>
+    <view>
+      <text>龙岗坂田《黄金苑》</text>
+      <view>
+        龙岗坂田《黄金苑》龙岗坂田《黄金苑》龙岗坂田《黄金苑》龙岗坂田《黄金苑》龙岗坂田《黄金苑》龙岗坂田《黄金苑》
+        看房热线：11111111111丸子(微信同号)
+      </view>
+      <image></image>
+    </view>
+  </view>
+</view>

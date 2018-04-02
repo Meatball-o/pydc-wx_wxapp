@@ -1,7 +1,51 @@
-<!--index.wxml-->
+<!--search.wxml-->
 <scroll-view>
+  <!--搜索-->
   <view class="index_head">
-      <input type="text" placeholder="请输入区域，版块或楼盘" class="index_head_txt"/>
-      <button>搜索</button>
+    <navigator class="index_head_txt" url="/pages/search/search" >请输入区域，版块或楼盘</navigator>
   </view>
+  <!--nav-->
+  <view class="index_nav">
+    <ul wx:for="{{indexNav}}" wx:key="indexNav">
+      <li>
+        <span>{{item.img}}</span>
+        <span>{{item.text}}</span>
+      </li>
+    </ul>
+  </view>
+  <!--轮播-->
+  <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+    <block wx:for="{{imgUrls}}" wx:key="indexImgs">
+      <swiper-item>
+        <image src="{{item}}" class="slide-image" width="355" height="150"/>
+      </swiper-item>
+    </block>
+  </swiper>
+  <!--主体-->
+  <div class="index-con" style="background-color: #fff">
+    <ul class="index-con-t">
+      <li  wx:for="{{indexCon}}" wx:key="index">
+        <image src="{{item.img}}"></image>
+        <view class="index-con-c">
+          <em class="index-con-title">{{item.title}}</em>
+          <i class="index-con-address">{{item.address}}</i>
+          <view class="index-con-price">
+            <em>均价¥</em> <i>{{item.price}}</i>
+          </view>
+        </view>
+      </li>
+    </ul>
+    <ul class="index-con-m">
+      <li class="cf" wx:for="{{indexCon}}" wx:key="indexCon">
+        <image class="lf" src="{{item.img}}"></image>
+        <view class="index-con-mc rt">
+          <em class="index-con-mc-title">{{item.title}}</em>
+          <i class="index-con-mc-address">{{item.address}}</i>
+          <view class="index-con-mc-price">
+            <em>均价¥</em> <i>{{item.price}}</i>
+          </view>
+        </view>
+      </li>
+    </ul>
+  </div>
 </scroll-view>
