@@ -57,7 +57,7 @@ Page({
     console.log(event)
   },
   requestDataList: function () {
-    var vm =this;
+    var vm = this;
     wx.request({
       method: "GET",
       url: 'http://pydc.test.heiliuer.com/api/wxapp/house',
@@ -71,9 +71,12 @@ Page({
       },
       success: function (res) {
         var dataList = (res.dataList || []).concat(res.data.data.docs);
-        vm.totalPage = res.data.total;
-        vm.currPage += 1;
-        console.log(dataList)
+        vm.setData(
+          {
+            dataList: dataList,
+            currPage: vm.currPage + 1,
+          }
+        );
       }
     })
   },

@@ -25,12 +25,12 @@
   <div class="index-con" style="background-color: #fff">
     <ul class="index-con-t">
       <li  wx:for="{{dataList}}" wx:key="index">
-        <image src="{{item.img}}"></image>
+        <image src="{{item.coverImage.url}}"></image>
         <view class="index-con-c">
           <em class="index-con-title">{{item.title}}</em>
           <i class="index-con-address">{{item.address}}</i>
           <view class="index-con-price">
-            <em>均价¥</em> <i>{{item.price}}</i>
+            <em>均价¥</em> <i>{{item.averagePrice}}</i>
           </view>
         </view>
       </li>
