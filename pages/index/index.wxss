@@ -19,7 +19,7 @@
 .index_nav ul{
   width: 100%;
 }
-.index_nav ul li{
+.index_nav ul .index-con-t-con{
   width: 25%;
   display: inline-block;
   text-align: center;
@@ -28,7 +28,7 @@
   width: 100%;
   height: 300rpx;
 }
-.index-con-m li{
+.index-con-m .index-con-t-con{
   display: block;
   margin-bottom: 10rpx;
 }

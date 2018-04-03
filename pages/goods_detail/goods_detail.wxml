@@ -1,16 +1,14 @@
 <view class="goods_detail">
   <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
-    <block wx:for="{{imgUrls}}" wx:key="indexImgs">
-      <swiper-item>
-        <image src="{{item}}" class="slide-image"/>
+      <swiper-item  wx:for="{{houseDetail.images}}" wx:key="{{index}}">
+        <image src="{{item.url}}" class="slide-image"/>
       </swiper-item>
-    </block>
   </swiper>
   <view class="goods-d-text">
-    <text class="goods-d-text-title">《黄金苑》</text>
-    <i class="goods-d-text-big">一房一厅48平 俩房俩厅68 79平</i>
+    <text class="goods-d-text-title">{{houseDetail.name}}</text>
+    <i class="goods-d-text-big">{{houseDetail.mark}}</i>
     <view class="goods-d-price">
-      <i class="goods-d-text-newp">均价¥<em>99999</em></i>
+      <i class="goods-d-text-newp">均价¥<em>{{houseDetail.averagePrice}}</em></i>
       <view class="goods-d-text-oldp">
         <i>均价¥<em>99999</em></i>
       </view>

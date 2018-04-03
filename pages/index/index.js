@@ -34,12 +34,11 @@ Page({
     var vm = this;
     wx.request({
       method: "GET",
-      url: 'http://pydc.test.heiliuer.com/api/wxapp/house',
+      url: 'https://heiliuer.com/api/wxapp/house',
       dataType: 'json',
       data: {
         page: vm.data.currPage,
         total: vm.data.totalPage,
-        id:vm.data.id,
       },
       header: {
         'content-type': 'application/json' // 默认值
