@@ -1,5 +1,5 @@
 <!--search.wxml-->
-<scroll-view scroll-y  bindscrolltolower="requestDataList" style="height: 500px;">
+<scroll-view scroll-y  bindscrolltolower="requestDataList" style="height: 700px;">
   <!--搜索-->
   <view class="index_head">
     <navigator class="index_head_txt" url="/pages/search/search" >请输入区域，版块或楼盘</navigator>
@@ -36,7 +36,8 @@
       </li>
     </ul>
     <ul class="index-con-m">
-        <li class="cf" wx:for="{{dataList}}" wx:key="indexCon">
+        <li class="cf" wx:for="{{dataList}}" wx:key="indexCon" bindtap="goodDetail">
+          <navigator :url="item.id"></navigator>
           <image class="lf" src="{{item.coverImage.url}}"></image>
           <view class="index-con-mc rt">
             <em class="index-con-mc-title">{{item.name}}</em>

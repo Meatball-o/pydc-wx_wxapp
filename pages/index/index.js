@@ -39,6 +39,7 @@ Page({
       data: {
         page: vm.data.currPage,
         total: vm.data.totalPage,
+        id:vm.data.id,
       },
       header: {
         'content-type': 'application/json' // 默认值
