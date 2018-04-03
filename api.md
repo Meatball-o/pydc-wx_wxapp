@@ -2,7 +2,7 @@
 
 ## 房产
 
-### https://www.heiliuer.com
+### https://heiliuer.com
 
 #### [001] 获取房产列表（分页）
 
