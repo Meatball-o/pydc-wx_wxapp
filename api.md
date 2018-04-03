@@ -2,7 +2,7 @@
 
 ## 房产
 
-### host pydc.test.heiliuer.com
+### host www.heiliuer.com
 
 [001] 获取房产列表（分页）
 
