@@ -1,61 +1,149 @@
 /**index.wxss**/
-.index_head {
-  width: 750rpx;
-  background: red;
-  height: 160rpx;
+.index-banner{
+  width:750rpx;
   box-sizing: border-box;
-  padding-top: 50rpx;
+  height: 336rpx;
+  padding: 30rpx;
 }
-
-.index_head .index_head_txt {
+.index-banner image{
+  width:100%;
+  box-sizing: border-box;
+  height: 276rpx;
+}
+.index-head {
+  width: 750rpx;
+  height: 400rpx;
+  box-sizing: border-box;
+}
+.index-head image{
+  width: 750rpx;
+  height: 400rpx;
+}
+.index-head .index-head-txt {
+  position: absolute;
+  top:28rpx;
+  left: 0;
   width: 72%;
-  background: #fff;
-  height: 60rpx;
-  line-height: 60rpx;
-  border-radius: 30rpx;
+  background: rgba(245, 245, 245, .6);
+  height: 56rpx;
+  line-height: 64rpx;
+  border-radius:28rpx;
   margin-left: 14%;
   text-align: center;
+  color: #fff;
 }
-.index_nav ul{
+.index-head .index-head-txt .iconfont{
+  position: absolute;
+  left:80rpx;
+  top:-2rpx;
+
+}
+.index-nav .index-nav-con{
   width: 100%;
+  margin: 22rpx 0;
 }
-.index_nav ul .index-con-t-con{
+.index-nav .index-nav-con .index-con-t-con{
   width: 25%;
+  padding: 26rpx 0 ;
   display: inline-block;
+  font-size: 26rpx;
   text-align: center;
+}
+.index-nav .index-nav-con .index-con-t-con .iconfont{
+  font-size: 44rpx;
+  width: 74rpx;
+  height: 74rpx;
+  border-radius: 50%;
+  color: #fff;
+  margin: 0 auto;
+  margin-bottom: 14rpx;
+  box-sizing: border-box;
+  padding-top: 12rpx;
+}
+.index-nav .index-nav-con .index-con-t-con .f-ns{
+  background-color: #E98071;
+}
+.index-nav .index-nav-con .index-con-t-con .f-ba{
+  background-color: #F4C765;
+}
+.index-nav .index-nav-con .index-con-t-con .f-lh{
+  background-color: #91CDE1;
+}
+.index-nav .index-nav-con .index-con-t-con .f-sz{
+  background-color: #B2D55D;
+}
+.index-nav .index-nav-con .index-con-t-con .f-gm{
+  background-color: #8C9BBB;
+}
+.index-nav .index-nav-con .index-con-t-con .f-lg{
+  background-color: #EE9469;
+  font-weight: bold;
+}
+.index-nav .index-nav-con .index-con-t-con .f-cw{
+  background-color: #8CC9BC;
+  font-weight: bold;
+}
+.index-nav .index-nav-con .index-con-t-con .f-wm{
+  background-color: #F095A3;
+}
+.index-nav .index-nav-con .index-con-t-con image{
+ height: 240rpx;
+  width: 40%;
 }
 .slide-image{
   width: 100%;
   height: 300rpx;
 }
-.index-con-m .index-con-t-con{
-  display: block;
-  margin-bottom: 10rpx;
-}
-.index-con-m image{
-  width: 40%;
-  height: 288rpx;
-}
-.index-con-m .index-con-mc{
-  width: 60%;
-  height: 288rpx;
+
+/*列表通用*/
+.index-con-b-title{
+  width: 100%;
   box-sizing: border-box;
-  padding: 20rpx;
-  box-shadow: 2px 0px 5px #aaa;
 }
-.index-con-mc-title{
-  font-size: 26rpx;
+.index-con-b-title text{
+  height: 100rpx;
+  line-height: 100rpx;
 }
-.index-con-mc-address{
+.index-con-b-title text:first-child{
+  font-weight: bold;
+  font-size: 36rpx;
+}
+/*50%列表*/
+.index-con-t{
+  width: 750rpx;
+  box-sizing: border-box;
+  padding-left:30rpx;
+  padding-right: 30rpx;
   display: block;
-  color: #666;
+}
+.index-con-t .index-con-t-con{
+  display: inline-block;
+  width: 330rpx;
+  margin-bottom: 15rpx;
+  background-color: #fff;
+}
+.index-con-t .index-con-t-con image{
+  width: 330rpx;
+  height: 330rpx;
+}
+.index-con-t .index-con-t-con:nth-child(2n){
+  margin-right:30rpx;
+}
+.index-con-c .index-con-title{
+  display: inline-block;
   font-size: 26rpx;
-  padding: 100rpx 0 20rpx 0;
 }
-.index-con-mc-price{
-  color: red;
+.index-con-c .index-con-address{
+  display: block;
   font-size: 24rpx;
+  margin: 8rpx 0 12rpx 0;
+  color: #666;
 }
-.index-con-mc-price i{
+.index-con-c .index-con-price{
+  display: inline-block;
+  font-size: 24rpx;
+  color: red;
+}
+.index-con-c .index-con-price text:last-child{
   font-size: 30rpx;
 }

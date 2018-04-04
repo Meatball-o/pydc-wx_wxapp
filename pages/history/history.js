@@ -1,7 +1,5 @@
-/**
- * Created by 丸子 on 2018-03-31.
- */
-
+//index.js
+//获取应用实例
 const app = getApp()
 
 Page({
@@ -36,20 +34,6 @@ Page({
         );
       }
     })
-  },
-  onShareAppMessage: function (res) {
-    const vm=this;
-    return {
-      title: '蒲悦地产',
-      path: '/pages/index/index',
-      form:'menu',
-      success: function (res) {
-        // 转发成功
-      },
-      fail: function (res) {
-        // 转发失败
-      }
-    }
   },
   onLoad: function () {
     this.requestDataList()

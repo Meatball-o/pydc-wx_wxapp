@@ -1,7 +1,215 @@
 /**app.wxss 公用css**/
+
+
+@font-face {
+  font-family: 'iconfont';  /* project id 609296 */
+  src: url('//at.alicdn.com/t/font_609296_qyenqtadotfkcsor.eot');
+  src: url('//at.alicdn.com/t/font_609296_qyenqtadotfkcsor.eot?#iefix') format('embedded-opentype'),
+  url('//at.alicdn.com/t/font_609296_qyenqtadotfkcsor.woff') format('woff'),
+  url('//at.alicdn.com/t/font_609296_qyenqtadotfkcsor.ttf') format('truetype'),
+  url('//at.alicdn.com/t/font_609296_qyenqtadotfkcsor.svg#iconfont') format('svg');
+}
+
+.iconfont {
+  font-family:"iconfont" !important;
+  font-size:16px;
+  font-style:normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-dianhua2:before { content: "\e604"; }
+
+.icon-huidaodingbu:before { content: "\e600"; }
+
+.icon-home:before { content: "\e620"; }
+
+.icon-zuji:before { content: "\e601"; }
+
+.icon-tubiao102:before { content: "\e629"; }
+
+.icon-yijianfankui1:before { content: "\e616"; }
+
+.icon-94:before { content: "\e674"; }
+
+.icon-dianhua:before { content: "\e6d0"; }
+
+.icon-caidan:before { content: "\e780"; }
+
+.icon-sousuo:before { content: "\e617"; }
+
+.icon-iconset0413:before { content: "\e724"; }
+
+.icon-iconfontjiantou2:before { content: "\e634"; }
+
+.icon-weibiaoti12:before { content: "\e61e"; }
+
+.icon-fangzihouse129:before { content: "\e644"; }
+
+.icon-dianhua1:before { content: "\e6a3"; }
+
+.icon-xiangxiajiantou:before { content: "\e630"; }
+
+.icon-zuji1:before { content: "\e638"; }
+
+.icon-fangzi:before { content: "\e614"; }
+
+.icon-zufang:before { content: "\e66e"; }
+
+.icon-shoucang:before { content: "\e65f"; }
+
+.icon-dianhua3:before { content: "\e74c"; }
+
+.icon-jiaoyinzujifangke:before { content: "\e87e"; }
+
+.icon-fangzi1:before { content: "\e6d3"; }
+
+.icon-caidan1:before { content: "\e607"; }
+
+.icon-caidan11:before { content: "\e611"; }
+
+.icon-haofangtuo400iconfonthaiwaidichan:before { content: "\e681"; }
+
+.icon-haofangtuo400iconfonthaofangtuo:before { content: "\e683"; }
+
+.icon-haofangtuo400iconfontjibenxinxi:before { content: "\e685"; }
+
+.icon-haofangtuo400iconfontshenqingershoufangshikan:before { content: "\e695"; }
+
+.icon-haofangtuo400iconfontwodeershoufang:before { content: "\e6a1"; }
+
+.icon-fankuiyijian:before { content: "\e649"; }
+
+.icon-yijianfankui2:before { content: "\e619"; }
+
+.icon-sousuo1:before { content: "\e641"; }
+
+.icon-haofangtuo400iconfontdianhuaanniu:before { content: "\e6c7"; }
+
+.icon-youjiantou1:before { content: "\e628"; }
+
+.icon-shoucang1:before { content: "\e631"; }
+
+.icon-jiatingfang:before { content: "\e632"; }
+
+.icon-yixingfangchan:before { content: "\e618"; }
+
+.icon-star:before { content: "\e639"; }
+
+.icon-fenxiang-1:before { content: "\e60b"; }
+
+.icon-shoucang2:before { content: "\e62a"; }
+
+.icon-900caidan_shouye:before { content: "\e680"; }
+
+.icon-yijianfankui:before { content: "\e60e"; }
+
+.icon-icon-test:before { content: "\e64e"; }
+
+.icon-icon-test1:before { content: "\e64f"; }
+
+.icon-shangjia:before { content: "\e63a"; }
+
+.icon-zuji2:before { content: "\e61d"; }
+
+.icon-zufang1:before { content: "\e622"; }
+
+.icon-fangyuan:before { content: "\e610"; }
+
+.icon-wodefangjian:before { content: "\e61a"; }
+
+.icon-guanyuwomen:before { content: "\e68d"; }
+
+.icon-shangxiajiantou:before { content: "\e6b7"; }
+
+.icon-haofangtuoiconfont_dianpushoucang:before { content: "\e704"; }
+
+.icon-haofangtuoiconfont_dianpu:before { content: "\e705"; }
+
+.icon-haofangtuoiconfont_fangyuanguanli:before { content: "\e706"; }
+
+.icon-share:before { content: "\e6fb"; }
+
+.icon-boshiweb_yijianfankui:before { content: "\e62d"; }
+
+.icon-house:before { content: "\e657"; }
+
+.icon-zuji3:before { content: "\e602"; }
+
+.icon-home1:before { content: "\e69c"; }
+
+.icon-zuixinfangyuan:before { content: "\e656"; }
+
+.icon-shoucang3:before { content: "\e7a7"; }
+
+.icon-huidaodingbu1:before { content: "\e88d"; }
+
+.icon-xiangxiajiantoucuxiao:before { content: "\e8c8"; }
+
+.icon-fangzi2:before { content: "\e615"; }
+
+.icon-arrow-bottom:before { content: "\e765"; }
+
+.icon-shoucang4:before { content: "\e670"; }
+
+.icon-shoucang5:before { content: "\e603"; }
+
+.icon-sousuo2:before { content: "\e633"; }
+
+.icon-fenxiang:before { content: "\e648"; }
+
+.icon-loufang:before { content: "\e61b"; }
+
+.icon-sousuo3:before { content: "\e61c"; }
+
+.icon-collection-b:before { content: "\e60d"; }
+
+.icon-shoucang6:before { content: "\e78c"; }
+
+.icon-icon-:before { content: "\e61f"; }
+
+.icon-shoucang7:before { content: "\e694"; }
+
+.icon-fangjian:before { content: "\e613"; }
+
+.icon-zhuyefangzi:before { content: "\e6a5"; }
+
+.icon-shoucang8:before { content: "\e623"; }
+
+.icon-tubiaozhizuomobandefuben-:before { content: "\e612"; }
+
+.icon-fangzi3:before { content: "\e8ff"; }
+
+.icon-xiangxiajiantou1:before { content: "\e98f"; }
+
+
+
+
+
+
+
+.index-f-phone{
+  background-color: #fff;
+  width: 80rpx;
+  height: 80rpx;
+  color: #000;
+  border-radius: 40rpx;
+  position: fixed;
+  bottom: 80rpx;
+  right: 30rpx;
+  border: 1rpx solid #eee;
+  line-height: 44rpx;
+}
+.index-f-phone .iconfont{
+  font-size: 58rpx;
+  position: absolute;
+  top:14rpx;
+  left: 10rpx;
+}
+
 page{
   font-size:28rpx;
-  background-color: #f3f3f3;
+  background-color: #fff;
   font-family: -apple-system-font, Helvetica Neue, Helvetica, sans-serif;
 }
 
@@ -11,7 +219,6 @@ page{
 .rt {
   float: right;
 }
-
 .cf:after {
   content: "";
   display: table;
@@ -19,49 +226,235 @@ page{
   clear: both;
   visibility: hidden;
 }
-/*列表*/
-.index-con{
+.index-tc{
   width: 100%;
+  height: 16rpx;
+  background-color: #f3f3f3;
+}
+/*100%列表*/
+.index-con-m{
+  width: 750rpx;
   box-sizing: border-box;
-  padding-left: 2%;
-  padding-right: 2%;
-  display: block;
-  margin-top: 16rpx;
-}
-.index-con .index-con-t{
+  padding-left:30rpx;
+  padding-right: 30rpx;
   display: block;
 }
-.index-con .index-con-t .index-con-t-con{
-  display: inline-block;
-  width: 49%;
-  margin-bottom: 15rpx;
-  background-color: #fff;
+.index-con-m .index-con-t-con{
+  width:100%;
+  padding: 34rpx 0;
+  box-sizing: border-box;
 }
-.index-con .index-con-t .index-con-t-con image{
-  width: 100%;
-  height: 360rpx;
+.index-con-m image{
+  width: 210rpx;
+  height:160rpx ;
 }
-/*.index-con-c{*/
-  /*width: 47%;*/
-/*}*/
-.index-con-c .index-con-title{
-  display: inline-block;
-  font-size: 26rpx;
+.index-con-m .index-con-mc{
+  width: 480rpx;
+  height:160rpx ;
+  box-sizing: border-box;
+  padding-left: 20rpx;
 }
-.index-con-c .index-con-address{
+.index-con-mc-title{
+  display: -webkit-box;
+  font-size:28rpx;
+  color:#000000;
+  line-height: 40rpx;
+  word-break: break-all;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp:2;
+  overflow: hidden;
+  text-overflow:ellipsis;
+}
+.index-con-mc-address{
   display: block;
-  font-size: 24rpx;
-  margin: 8rpx 0 12rpx 0;
   color: #666;
+  font-size: 26rpx;
+  padding: 6rpx 0;
 }
-.index-con-c .index-con-price{
-  display: inline-block;
-  font-size: 24rpx;
+.index-con-mc-price{
   color: red;
+  font-size: 24rpx;
 }
-.index-con-c .index-con-price i{
+.index-con-mc-price i{
   font-size: 30rpx;
 }
-.index-con-t .index-con-t-con:nth-child(2n-1){
-  margin-right: 2%;
+
+.ui-border-b:before {
+  border-bottom: 1px solid #e9e9e9;
+  content: '';
+  display: block;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  -webkit-transform-origin: left bottom
 }
+
+@media screen and (-webkit-min-device-pixel-ratio: 2) {
+  .ui-border-b:before {
+    -webkit-transform: scaleY(0.5)
+  }
+}
+
+@media screen and (-webkit-min-device-pixel-ratio: 3) {
+  .ui-border-b:before {
+    -webkit-transform: scaleY(0.3333)
+  }
+}
+
+.ui-border-t:before {
+  border-top: 1px solid #e9e9e9;
+  content: '';
+  display: block;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  -webkit-transform-origin: left top
+}
+
+@media screen and (-webkit-min-device-pixel-ratio: 2) {
+  .ui-border-t:before {
+    -webkit-transform: scaleY(0.5)
+  }
+}
+
+@media screen and (-webkit-min-device-pixel-ratio: 3) {
+  .ui-border-t:before {
+    -webkit-transform: scaleY(0.3333)
+  }
+}
+
+.ui-border-l:before {
+  border-left: 1px solid #e9e9e9;
+  content: '';
+  display: block;
+  bottom: 0;
+  position: absolute;
+  left: 0;
+  top: 0;
+  -webkit-transform-origin: left top
+}
+
+@media screen and (-webkit-min-device-pixel-ratio: 2) {
+  .ui-border-l:before {
+    -webkit-transform: scaleX(0.5)
+  }
+}
+
+@media screen and (-webkit-min-device-pixel-ratio: 3) {
+  .ui-border-l:before {
+    -webkit-transform: scaleX(0.3333)
+  }
+}
+
+.ui-border-r:before {
+  border-right: 1px solid #e9e9e9;
+  content: '';
+  display: block;
+  bottom: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  -webkit-transform-origin: right top
+}
+
+@media screen and (-webkit-min-device-pixel-ratio: 2) {
+  .ui-border-r:before {
+    -webkit-transform: scaleX(0.5)
+  }
+}
+
+@media screen and (-webkit-min-device-pixel-ratio: 3) {
+  .ui-border-r:before {
+    -webkit-transform: scaleX(0.3333)
+  }
+}
+
+.ui-border-t,
+.ui-border-l,
+.ui-border-b,
+.ui-border-r,
+.ui-border-tb {
+  position: relative
+}
+
+.ui-border-tb:before {
+  border-top: 1px solid #e9e9e9;
+  content: '';
+  display: block;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  -webkit-transform-origin: left top
+}
+
+@media screen and (-webkit-min-device-pixel-ratio: 2) {
+  .ui-border-tb:before {
+    -webkit-transform: scaleY(0.5)
+  }
+}
+
+@media screen and (-webkit-min-device-pixel-ratio: 3) {
+  .ui-border-tb:before {
+    -webkit-transform: scaleY(0.3333)
+  }
+}
+
+.ui-border-tb:after {
+  border-bottom: 1px solid #e9e9e9;
+  content: '';
+  display: block;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  -webkit-transform-origin: left bottom
+}
+
+@media screen and (-webkit-min-device-pixel-ratio: 2) {
+  .ui-border-tb:after {
+    -webkit-transform: scaleY(0.5)
+  }
+}
+
+@media screen and (-webkit-min-device-pixel-ratio: 3) {
+  .ui-border-tb:after {
+    -webkit-transform: scaleY(0.3333)
+  }
+}
+
+.ui-border:before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border: 1px solid #e9e9e9;
+  -webkit-transform-origin: 0 0;
+  padding: 1px;
+  -webkit-box-sizing: border-box;
+  pointer-events: none;
+  z-index: 10;
+  pointer-events: none
+}
+
+@media screen and (-webkit-min-device-pixel-ratio: 2) {
+  .ui-border:before {
+    width: 200%;
+    height: 200%;
+    -webkit-transform: scale(0.5)
+  }
+}
+
+@media screen and (-webkit-min-device-pixel-ratio: 3) {
+  .ui-border:before {
+    width: 300%;
+    height: 300%;
+    -webkit-transform: scale(0.3333)
+  }
+}
+
+

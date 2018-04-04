@@ -1,0 +1,28 @@
+<view>
+  <view class="business">
+    <view class="business-top">蒲悦地产</view>
+    <view class="index-tc"></view>
+    <view class="business-con-title">
+      <text>店铺介绍</text>
+    </view>
+    <view class="index-tc"></view>
+    <view class="business-con-title ui-border-b">
+      <text>公司信息</text>
+    </view>
+    <view class="business-con-title ui-border-b">
+      <text>名称:</text>蒲悦地产
+    </view>
+    <view class="business-con-title ui-border-b">
+      <text>联系人:</text>丸子
+    </view>
+    <view class="business-con-title ui-border-b">
+      <text>联系方式:</text>
+      <text  style="color: red" bindtap="calling">15319518745</text>
+    </view>
+    <view class="business-con-title">
+      <text>公司地址:</text>
+      广东省深圳市塘水围一区
+    </view>
+
+  </view>
+</view>

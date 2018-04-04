@@ -1,8 +1,5 @@
+
 <scroll-view scroll-y bindscrolltolower="requestDataList" style="height: 700px;">
-  <view class="goods-title ui-border-b">
-    <text>销量</text>
-    <text>价格</text>
-  </view>
   <view class="index-con-m">
     <navigator url="/pages/goods_detail/goods_detail?id={{item.id}}" class="cf index-con-t-con ui-border-b" wx:for="{{dataList}}"
                wx:key="indexCon">

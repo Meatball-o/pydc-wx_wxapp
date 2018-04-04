@@ -1,49 +1,135 @@
 <!--search.wxml-->
-<scroll-view scroll-y  bindscrolltolower="requestDataList" style="height: 700px;">
+<scroll-view scroll-y bindscrolltolower="requestDataList" style="height: 700px;">
   <!--搜索-->
-  <view class="index_head">
-    <navigator class="index_head_txt" url="/pages/search/search" >请输入区域，版块或楼盘</navigator>
+  <view class="index-head">
+    <navigator class="index-head-txt" url="/pages/search/search" hover-class="none">
+      <text class="iconfont icon-sousuo1"></text>
+      请输入区域，版块或楼盘
+    </navigator>
+    <image src="../img/home_banner.png"></image>
   </view>
   <!--nav-->
-  <view class="index_nav">
-    <ul wx:for="{{indexNav}}" wx:key="indexNav">
-      <li>
-        <span>{{item.img}}</span>
-        <span>{{item.text}}</span>
-      </li>
-    </ul>
+  <view class="index-nav">
+    <view class="index-nav-con">
+      <navigator class="index-con-t-con" url="/pages/goods/goods" hover-class="none">
+        <view class="iconfont icon-fangyuan f-ns"></view>
+        <text>南山区</text>
+      </navigator>
+      <navigator class="index-con-t-con" url="/pages/goods/goods" hover-class="none">
+        <view class="iconfont icon-fangzi2 f-ba"></view>
+        <text>宝安区</text>
+      </navigator>
+      <navigator class="index-con-t-con" url="/pages/goods/goods" hover-class="none">
+        <view class="iconfont icon-haofangtuo400iconfonthaofangtuo f-lh"></view>
+        <text>龙华区</text>
+      </navigator>
+      <navigator class="index-con-t-con" url="/pages/goods/goods" hover-class="none">
+        <view class="iconfont icon-zhuyefangzi f-sz"></view>
+        <text>深圳周边</text>
+      </navigator>
+      <navigator class="index-con-t-con" url="/pages/goods/goods" hover-class="none">
+        <view class="iconfont icon-home f-gm"></view>
+        <text>光明新区</text>
+      </navigator>
+      <navigator class="index-con-t-con" url="/pages/goods/goods" hover-class="none">
+        <view class="iconfont icon-icon-test f-lg"></view>
+        <text>龙岗区</text>
+      </navigator>
+      <navigator class="index-con-t-con" url="/pages/goods/goods" hover-class="none">
+        <view class="iconfont icon-icon-test1 f-cw"></view>
+        <text>村委统建楼</text>
+      </navigator>
+      <navigator class="index-con-t-con" url="/pages/about/about" hover-class="none">
+        <view class="iconfont icon-haofangtuo400iconfontwodeershoufang f-wm"></view>
+        <text>关于我们</text>
+      </navigator>
+    </view>
   </view>
   <!--轮播-->
-  <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
-      <swiper-item wx:for="{{imgUrls}}" wx:key="indexImgs">
-        <image src="{{item}}" class="slide-image" width="355" height="150"/>
-      </swiper-item>
-  </swiper>
+  <!--<swiper indicator-dots="{{indicatorDots}}" style="height: 300rpx" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">-->
+    <!--<swiper-item wx:for="{{imgUrls}}" wx:key="indexImgs">-->
+      <!--<image src="{{item}}" class="slide-image" width="355" height="150"/>-->
+    <!--</swiper-item>-->
+  <!--</swiper>-->
+  <navigator class="index-banner" hover-class="none">
+    <image src="https://alicdn.leyoujia.com/wap/images/index/hfzj-banner@2x.png"></image>
+  </navigator>
   <!--主体-->
-  <div class="index-con" style="background-color: #fff">
-    <ul class="index-con-t">
-      <navigator url="/pages/goods_detail/goods_detail?id={{item.id}}" class="cf index-con-t-con" wx:for="{{dataList}}" wx:key="indexCon">
-      <image src="{{item.coverImage.url}}"></image>
-        <view class="index-con-c">
-          <em class="index-con-title">00</em>
-          <i class="index-con-address">00</i>
-          <view class="index-con-price">
-            <em>均价¥</em> <i>00</i>
-          </view>
+  <view class="index-tc"></view>
+  <view class="index-con-t">
+    <view class="index-con-b-title cf">
+      <text class="lf">为您推荐</text>
+      <text class="rt">查看更多</text>
+    </view>
+    <navigator hover-class="none" style="padding: 0" url="/pages/goods_detail/goods_detail?id={{item.id}}"
+               class="cf index-con-t-con">
+      <image src="https://imgcloud.jjshome.com/pic/hsl/2017-07/01/7b6c0768-b5b0-419d-b9ea-ea9b7e6ab6c1.jpg?imageView2/2/w/210/h/16"></image>
+      <view class="index-con-c">
+        <text class="index-con-title">后海雅园，装修保养好</text>
+        <text class="index-con-address">3室2厅/89m²/西</text>
+        <view class="index-con-price">
+          <text>均价¥</text>
+          <text>11000</text>
         </view>
-      </navigator>
-    </ul>
-    <ul class="index-con-m">
-        <navigator url="/pages/goods_detail/goods_detail?id={{item.id}}" class="cf index-con-t-con"  wx:for="{{dataList}}" wx:key="indexCon">
-          <image class="lf" src="{{item.coverImage.url}}"></image>
-          <view class="index-con-mc rt">
-            <em class="index-con-mc-title">{{item.name}}</em>
-            <i class="index-con-mc-address">{{item.mark}}</i>
-            <view class="index-con-mc-price">
-              <em>均价¥</em> <i>{{item.averagePrice}}</i>
-            </view>
-          </view>
-        </navigator>
-      </ul>
-  </div>
+      </view>
+    </navigator>
+    <navigator hover-class="none" style="padding: 0" url="/pages/goods_detail/goods_detail?id={{item.id}}"
+               class="cf index-con-t-con">
+      <image src="https://imgcloud.jjshome.com/pic/hsl/2017-07/01/7b6c0768-b5b0-419d-b9ea-ea9b7e6ab6c1.jpg?imageView2/2/w/210/h/16"></image>
+      <view class="index-con-c">
+        <text class="index-con-title">后海雅园，装修保养好</text>
+        <text class="index-con-address">3室2厅/89m²/西</text>
+        <view class="index-con-price">
+          <text>均价¥</text>
+          <text>11000</text>
+        </view>
+      </view>
+    </navigator>
+    <navigator hover-class="none" style="padding: 0" url="/pages/goods_detail/goods_detail?id={{item.id}}"
+               class="cf index-con-t-con">
+      <image src="https://imgcloud.jjshome.com/pic/hsl/2017-07/01/7b6c0768-b5b0-419d-b9ea-ea9b7e6ab6c1.jpg?imageView2/2/w/210/h/16"></image>
+      <view class="index-con-c">
+        <text class="index-con-title">后海雅园，装修保养好</text>
+        <text class="index-con-address">3室2厅/89m²/西</text>
+        <view class="index-con-price">
+          <text>均价¥</text>
+          <text>11000</text>
+        </view>
+      </view>
+    </navigator>
+    <navigator hover-class="none" style="padding: 0" url="/pages/goods_detail/goods_detail?id={{item.id}}"
+               class="cf index-con-t-con">
+      <image src="https://imgcloud.jjshome.com/pic/hsl/2017-07/01/7b6c0768-b5b0-419d-b9ea-ea9b7e6ab6c1.jpg?imageView2/2/w/210/h/16"></image>
+      <view class="index-con-c">
+        <text class="index-con-title">后海雅园，装修保养好</text>
+        <text class="index-con-address">3室2厅/89m²/西</text>
+        <view class="index-con-price">
+          <text>均价¥</text>
+          <text>11000</text>
+        </view>
+      </view>
+    </navigator>
+  </view>
+  <view class="index-tc"></view>
+  <view class="index-con-m">
+    <view class="index-con-b-title cf ui-border-b">
+      <text class="lf">猜您喜欢</text>
+      <text class="rt">查看更多</text>
+    </view>
+    <navigator hover-class="none" url="/pages/goods_detail/goods_detail?id={{item.id}}" class="cf index-con-t-con ui-border-b"
+               wx:for="{{dataList}}"
+               wx:key="indexCon">
+      <image src="{{item.coverImage.url}}"></image>
+      <view class="index-con-mc rt">
+        <em class="index-con-mc-title">后海雅园，装修保养好后海雅园，装修保养好{{item.name}}</em>
+        <i class="index-con-mc-address">{{item.mark}}</i>
+        <view class="index-con-mc-price">
+          <em>均价¥</em> <i>{{item.averagePrice}}</i>
+        </view>
+      </view>
+    </navigator>
+  </view>
+  <view class="index-f-phone" style="line-height: 56rpx">
+    <text bindtap="calling" class="iconfont icon-dianhua3"></text>
+  </view>
 </scroll-view>

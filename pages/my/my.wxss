@@ -1,0 +1,32 @@
+.my{
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0 30rpx;
+}
+.my navigator{
+  height: 88rpx;
+  line-height: 88rpx;
+  position: relative;
+  padding-left: 40rpx;
+}
+.my navigator .iconfont:first-child{
+  position: absolute;
+  top:-2rpx;
+  left: 0rpx;
+  font-weight: bold;
+}
+.favorite .iconfont:first-child{
+  font-size: 36rpx;
+  color: #E98071;
+}
+.history .iconfont:first-child{
+  font-size: 36rpx;
+  color: #B2D55D;
+}
+.business .iconfont:first-child{
+  font-size: 31rpx;
+  color: #F095A3;
+}
+.feedback .iconfont:first-child{
+  color: #8CC9BC;
+}

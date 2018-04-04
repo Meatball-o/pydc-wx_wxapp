@@ -1,0 +1,45 @@
+page{
+  background-color: #f3f3f3;
+}
+.feedback{
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0 30rpx;
+
+}
+.feedback textarea{
+  background-color: #fff;
+  width: 100%;
+  border-radius: 10rpx;
+  box-sizing: border-box;
+  margin-top: 20rpx;
+  padding: 20rpx;
+}
+.feedback-con{
+  margin-top: 40rpx;
+  width: 100%;
+  box-sizing: border-box;
+}
+.feedback-con view{
+  position: relative;
+  height: 80rpx;
+  line-height: 80rpx;
+  padding: 0 40rpx;
+  background-color: #fff;
+}
+.feedback-con view input{
+  display: inline-block;
+  position: absolute;
+  top:14rpx;
+  left: 200rpx;
+}
+.feedback button{
+  height: 80rpx;
+  line-height: 80rpx;
+  background-color: red;
+  color: #fff;
+  text-align: center;
+  width: 80%;
+  margin-left: 10%;
+  margin-top: 40rpx;
+}

@@ -1,0 +1,26 @@
+<view>
+  <view class="my">
+    <navigator class="cf favorite ui-border-b" url="/pages/favorite/favorite" hover-class="none">
+      <text class="iconfont icon-shoucang2"></text>
+      我的收藏
+      <text class="iconfont icon-youjiantou1 rt"></text>
+    </navigator>
+    <navigator class="cf history ui-border-b" url="/pages/history/history" hover-class="none">
+      <text class="iconfont icon-zuji"></text>
+      我的足迹
+      <text class="iconfont icon-youjiantou1 rt"></text>
+    </navigator>
+    <navigator class="cf business ui-border-b" url="/pages/business/business" hover-class="none">
+      <text class="iconfont icon-shangjia"></text>
+      关于商家
+      <text class="iconfont icon-youjiantou1  rt"></text>
+    </navigator>
+    <navigator class="cf feedback" url="/pages/feedback/feedback" hover-class="none">
+      <text class="iconfont icon-yijianfankui2"></text>
+      用户反馈
+      <text class="iconfont icon-youjiantou1 rt">
+        <text class="iconfont "></text>
+      </text>
+    </navigator>
+  </view>
+</view>

@@ -1,47 +1,9 @@
-.goods-nav {
-  width: 100%;
+.goods-title{
   height: 80rpx;
-  display: flex;
-  flex-direction: row;
-  background-color: #fff;
-  position: fixed;
-  top:0;
-  left: 0;
-  border-bottom: 1rpx solid #aaa;
-}
-
-.goods-default {
   line-height: 80rpx;
-  text-align: center;
-  flex: 1;
-  color: #000;
-  font-weight: bold;
-  font-size: 28rpx;
 }
-
-.goods-red {
-  line-height: 80rpx;
+.goods-title text{
+  display: inline-block;
+  width: 50%;
   text-align: center;
-  color: #fc5558;
-  flex: 1;
-  font-weight: bold;
-  font-size: 28rpx;
-}
-
-.goods-show {
-  display: block;
-  text-align: center;
-  line-height: 200rpx;
-}
-
-.goods-hidden {
-  display: none;
-  text-align: center;
-  line-height: 200px;
-}
-.goods-list li{
-  box-sizing: border-box;
-  padding: 16rpx;}
-.goods-list li image{
-  height: 100rpx;
 }

@@ -1,0 +1,24 @@
+.business{
+  width: 100%;
+  box-sizing: border-box;
+}
+.business-top{
+  width: 100%;
+  height: 300rpx;
+  padding-top: 160rpx;
+  box-sizing: border-box;
+  font-size: 34rpx;
+  font-weight: bold;
+  text-align: center;
+}
+.business-con-title{
+  width: 100%;
+  box-sizing: border-box;
+  height: 88rpx;
+  line-height: 88rpx;
+  padding:  0 30rpx;
+}
+.business-con-title text{
+  width: 140rpx;
+  display: inline-block;
+}
