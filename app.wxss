@@ -187,7 +187,9 @@
 
 
 
-
+button::after {
+  border-radius: 0;
+}
 .index-f-phone{
   background-color: #fff;
   width: 80rpx;

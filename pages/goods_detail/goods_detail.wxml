@@ -61,7 +61,7 @@
     <view class="index-tc"></view>
     <view class="goods-d-characteristic">
       <text class="goods-d-characteristic-t ui-border-b">房源特色</text>
-      <view>
+      <view class="ui-border-b">
         <text>房源特色</text>
         <text>小区位于福田区景田深南大道与香梅路交汇处，地理位置优越，地段好，步行便可到达地铁口，周边有多个公交站点，交通方便，周围设施齐全</text>
       </view>

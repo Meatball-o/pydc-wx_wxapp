@@ -47,9 +47,9 @@
   </view>
   <!--轮播-->
   <!--<swiper indicator-dots="{{indicatorDots}}" style="height: 300rpx" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">-->
-    <!--<swiper-item wx:for="{{imgUrls}}" wx:key="indexImgs">-->
-      <!--<image src="{{item}}" class="slide-image" width="355" height="150"/>-->
-    <!--</swiper-item>-->
+  <!--<swiper-item wx:for="{{imgUrls}}" wx:key="indexImgs">-->
+  <!--<image src="{{item}}" class="slide-image" width="355" height="150"/>-->
+  <!--</swiper-item>-->
   <!--</swiper>-->
   <navigator class="index-banner" hover-class="none">
     <image src="https://alicdn.leyoujia.com/wap/images/index/hfzj-banner@2x.png"></image>
@@ -59,11 +59,13 @@
   <view class="index-con-t">
     <view class="index-con-b-title cf">
       <text class="lf">为您推荐</text>
+      <text class="iconfont icon-youjiantou1 rt"></text>
       <text class="rt">查看更多</text>
     </view>
     <navigator hover-class="none" style="padding: 0" url="/pages/goods_detail/goods_detail?id={{item.id}}"
                class="cf index-con-t-con">
-      <image src="https://imgcloud.jjshome.com/pic/hsl/2017-07/01/7b6c0768-b5b0-419d-b9ea-ea9b7e6ab6c1.jpg?imageView2/2/w/210/h/16"></image>
+      <image
+        src="https://imgcloud.jjshome.com/pic/hsl/2017-07/01/7b6c0768-b5b0-419d-b9ea-ea9b7e6ab6c1.jpg?imageView2/2/w/210/h/16"></image>
       <view class="index-con-c">
         <text class="index-con-title">后海雅园，装修保养好</text>
         <text class="index-con-address">3室2厅/89m²/西</text>
@@ -75,7 +77,8 @@
     </navigator>
     <navigator hover-class="none" style="padding: 0" url="/pages/goods_detail/goods_detail?id={{item.id}}"
                class="cf index-con-t-con">
-      <image src="https://imgcloud.jjshome.com/pic/hsl/2017-07/01/7b6c0768-b5b0-419d-b9ea-ea9b7e6ab6c1.jpg?imageView2/2/w/210/h/16"></image>
+      <image
+        src="https://imgcloud.jjshome.com/pic/hsl/2017-07/01/7b6c0768-b5b0-419d-b9ea-ea9b7e6ab6c1.jpg?imageView2/2/w/210/h/16"></image>
       <view class="index-con-c">
         <text class="index-con-title">后海雅园，装修保养好</text>
         <text class="index-con-address">3室2厅/89m²/西</text>
@@ -87,7 +90,8 @@
     </navigator>
     <navigator hover-class="none" style="padding: 0" url="/pages/goods_detail/goods_detail?id={{item.id}}"
                class="cf index-con-t-con">
-      <image src="https://imgcloud.jjshome.com/pic/hsl/2017-07/01/7b6c0768-b5b0-419d-b9ea-ea9b7e6ab6c1.jpg?imageView2/2/w/210/h/16"></image>
+      <image
+        src="https://imgcloud.jjshome.com/pic/hsl/2017-07/01/7b6c0768-b5b0-419d-b9ea-ea9b7e6ab6c1.jpg?imageView2/2/w/210/h/16"></image>
       <view class="index-con-c">
         <text class="index-con-title">后海雅园，装修保养好</text>
         <text class="index-con-address">3室2厅/89m²/西</text>
@@ -99,7 +103,8 @@
     </navigator>
     <navigator hover-class="none" style="padding: 0" url="/pages/goods_detail/goods_detail?id={{item.id}}"
                class="cf index-con-t-con">
-      <image src="https://imgcloud.jjshome.com/pic/hsl/2017-07/01/7b6c0768-b5b0-419d-b9ea-ea9b7e6ab6c1.jpg?imageView2/2/w/210/h/16"></image>
+      <image
+        src="https://imgcloud.jjshome.com/pic/hsl/2017-07/01/7b6c0768-b5b0-419d-b9ea-ea9b7e6ab6c1.jpg?imageView2/2/w/210/h/16"></image>
       <view class="index-con-c">
         <text class="index-con-title">后海雅园，装修保养好</text>
         <text class="index-con-address">3室2厅/89m²/西</text>
@@ -114,9 +119,11 @@
   <view class="index-con-m">
     <view class="index-con-b-title cf ui-border-b">
       <text class="lf">猜您喜欢</text>
+      <text class="iconfont icon-youjiantou1 rt"></text>
       <text class="rt">查看更多</text>
     </view>
-    <navigator hover-class="none" url="/pages/goods_detail/goods_detail?id={{item.id}}" class="cf index-con-t-con ui-border-b"
+    <navigator hover-class="none" url="/pages/goods_detail/goods_detail?id={{item.id}}"
+               class="cf index-con-t-con ui-border-b"
                wx:for="{{dataList}}"
                wx:key="indexCon">
       <image src="{{item.coverImage.url}}"></image>

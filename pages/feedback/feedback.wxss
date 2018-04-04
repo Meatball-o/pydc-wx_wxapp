@@ -36,7 +36,6 @@ page{
 .feedback button{
   height: 80rpx;
   line-height: 80rpx;
-  background-color: red;
   color: #fff;
   text-align: center;
   width: 80%;

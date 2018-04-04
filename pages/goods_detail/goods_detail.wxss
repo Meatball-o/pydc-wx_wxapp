@@ -87,7 +87,6 @@
   width: 690rpx;
   margin: 0 30rpx;
   padding: 20rpx 0;
-  border-bottom: 1rpx solid #eee;
   box-sizing: border-box;
 }
 .goods-d-characteristic view text:first-child{
