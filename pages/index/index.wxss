@@ -19,11 +19,18 @@
 .index_nav ul{
   width: 100%;
 }
+.index_nav ul .image_frame{
+  width:90%;
+  height:150rpx;
+}
+
 .index_nav ul .index-con-t-con{
   width: 25%;
   display: inline-block;
   text-align: center;
 }
+
+
 .slide-image{
   width: 100%;
   height: 300rpx;

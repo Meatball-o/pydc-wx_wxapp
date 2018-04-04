@@ -7,8 +7,8 @@
   <!--nav-->
   <view class="index_nav">
     <ul wx:for="{{indexNav}}" wx:key="indexNav">
-      <li>
-        <span>{{item.img}}</span>
+      <li class="index-con-t-con">
+        <image class="image_frame" src="{{item.img}}" mode="aspectFill"></image>
         <span>{{item.text}}</span>
       </li>
     </ul>
