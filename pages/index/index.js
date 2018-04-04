@@ -11,6 +11,10 @@ Page({
   tapName: function (event) {
     console.log(event)
   },
+  //下拉刷新
+  onPullDownRefresh: function () {
+    wx.showNavigationBarLoading()
+  },
   requestDataList: function () {
     var vm = this;
     wx.request({
@@ -47,11 +51,11 @@ Page({
     })
   },
   onShareAppMessage: function (res) {
-    const vm=this;
+    const vm = this;
     return {
       title: '蒲悦地产',
       path: '/pages/index/index',
-      form:'menu',
+      form: 'menu',
       success: function (res) {
         // 转发成功
       },
@@ -59,15 +63,6 @@ Page({
         // 转发失败
       }
     }
-  },
-  //下拉刷新
-  onPullDownRefresh:function() {
-    wx.showNavigationBarLoading()
-    setTimeout(function() {
-      // complete
-      wx.hideNavigationBarLoading()
-      wx.stopPullDownRefresh()
-    },1500);
   },
   onLoad: function () {
     this.requestDataList()

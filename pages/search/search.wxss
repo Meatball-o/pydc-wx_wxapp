@@ -1,18 +1,25 @@
 .search-con{
   width: 100%;
-  height: 88rpx;
+  height: 100rpx;
   box-sizing: border-box;
   padding-top: 7px;
   background-color: #eee;
+  position: relative;
+}
+.search-con .iconfont{
+  position: absolute;
+  top: 30rpx;
+  left: 60rpx;
+  font-size: 40rpx;
 }
 .search-con input{
   width: 78%;
   background-color: #fff;
   margin-left: 5%;
   box-sizing: border-box;
-  padding:  0 20rpx;
-  height: 54rpx;
-  line-height:54rpx;
+  padding:  0 20rpx 0 66rpx;
+  height: 72rpx;
+  line-height:72rpx;
   border-top-left-radius:6rpx;
   border-bottom-left-radius:6rpx;
   border: 1px solid #ccc;
@@ -21,9 +28,9 @@
   width: 12%;
   background-color: #fff;
   box-sizing: border-box;
-  height: 54rpx;
+  height: 72rpx;
   text-align: center;
-  line-height:52rpx;
+  line-height:72rpx;
   font-size: 26rpx;
   border-top-right-radius:6rpx;
   border-bottom-right-radius:6rpx;

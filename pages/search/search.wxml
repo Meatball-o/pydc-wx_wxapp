@@ -1,7 +1,8 @@
 <!--search.wxml-->
 <view class="search">
   <view class="search-con cf">
-    <input class="lf" password type="number" placeholder="请输入关键字搜索"/>
+    <text class="iconfont icon-sousuo3"></text>
+    <input class="lf" placeholder="请输入关键字搜索" confirm-type="search" auto-focus/>
     <view class="lf">搜索</view>
   </view>
 </view>
