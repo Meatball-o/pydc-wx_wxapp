@@ -7,7 +7,8 @@
   height: 88rpx;
   line-height: 88rpx;
   position: relative;
-  padding-left: 40rpx;
+  padding-left: 60rpx;
+  font-size: 32rpx;
 }
 .my navigator .iconfont:first-child{
   position: absolute;
@@ -16,17 +17,18 @@
   font-weight: bold;
 }
 .favorite .iconfont:first-child{
-  font-size: 36rpx;
+  font-size: 42rpx;
   color: #E98071;
 }
 .history .iconfont:first-child{
-  font-size: 36rpx;
+  font-size: 40rpx;
   color: #B2D55D;
 }
 .business .iconfont:first-child{
-  font-size: 31rpx;
+  font-size: 35rpx;
   color: #F095A3;
 }
 .feedback .iconfont:first-child{
+  font-size: 35rpx;
   color: #8CC9BC;
 }

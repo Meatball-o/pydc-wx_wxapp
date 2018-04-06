@@ -59,34 +59,41 @@
   margin: 0 auto;
   margin-bottom: 14rpx;
   box-sizing: border-box;
-  padding-top: 12rpx;
+  padding-top: 14rpx;
 }
-.index-nav .index-nav-con .index-con-t-con .f-ns{
+.index-nav .index-nav-con .index-con-t-con:first-child view{
   background-color: #E98071;
 }
-.index-nav .index-nav-con .index-con-t-con .f-ba{
+.index-nav .index-nav-con .index-con-t-con:nth-child(2) view{
   background-color: #F4C765;
 }
-.index-nav .index-nav-con .index-con-t-con .f-lh{
+.index-nav .index-nav-con .index-con-t-con:nth-child(3) view{
   background-color: #91CDE1;
 }
-.index-nav .index-nav-con .index-con-t-con .f-sz{
+.index-nav .index-nav-con .index-con-t-con:nth-child(4) view{
   background-color: #B2D55D;
 }
-.index-nav .index-nav-con .index-con-t-con .f-gm{
+.index-nav .index-nav-con .index-con-t-con:nth-child(5) view{
   background-color: #8C9BBB;
 }
-.index-nav .index-nav-con .index-con-t-con .f-lg{
+.index-nav .index-nav-con .index-con-t-con:nth-child(6) view{
   background-color: #EE9469;
   font-weight: bold;
 }
-.index-nav .index-nav-con .index-con-t-con .f-cw{
+.index-nav .index-nav-con .index-con-t-con:nth-child(7) view{
   background-color: #8CC9BC;
   font-weight: bold;
 }
-.index-nav .index-nav-con .index-con-t-con .f-wm{
+.index-nav .index-nav-con .index-con-t-con:last-child view{
   background-color: #F095A3;
 }
+.index-nav .index-nav-con .index-con-t-con:first-child view:before { content: "\e610"; }
+.index-nav .index-nav-con .index-con-t-con:nth-child(2) view:before { content: "\e615"; }
+.index-nav .index-nav-con .index-con-t-con:nth-child(3) view:before { content: "\e683"; }
+.index-nav .index-nav-con .index-con-t-con:nth-child(4) view:before { content: "\e6a5"; }
+.index-nav .index-nav-con .index-con-t-con:nth-child(5) view:before { content: "\e620"; }
+.index-nav .index-nav-con .index-con-t-con:nth-child(6) view:before { content: "\e64e"; }
+.index-nav .index-nav-con .index-con-t-con:nth-child(7) view:before { content: "\e64f"; }
 .index-nav .index-nav-con .index-con-t-con image{
  height: 240rpx;
   width: 40%;
@@ -104,6 +111,12 @@
 .index-con-b-title text{
   height: 100rpx;
   line-height: 100rpx;
+  vertical-align: middle;
+}
+.index-con-b-title navigator{
+  height: 100rpx;
+  line-height: 100rpx;
+  vertical-align: middle;
 }
 .index-con-b-title text:first-child{
   font-weight: bold;
@@ -133,6 +146,7 @@
 .index-con-c .index-con-title{
   display: inline-block;
   font-size: 26rpx;
+
 }
 .index-con-c .index-con-address{
   display: block;
@@ -147,4 +161,10 @@
 }
 .index-con-c .index-con-price text:last-child{
   font-size: 30rpx;
+}
+.index-loading{
+  margin:0;
+  text-align: center;
+  height: 100rpx;
+  line-height: 100rpx;
 }

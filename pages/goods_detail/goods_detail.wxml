@@ -5,7 +5,7 @@
     </swiper-item>
   </swiper>
   <view class="goods-d-text">
-    <text class="goods-d-text-title">看了大大，啦凯迪拉克萨来得快萨拉</text>
+    <text class="goods-d-text-title">{{houseDetail.name}}</text>
     <view class="goods-d-explain ui-border-tb">
       <view class="goods-d-price-con ui-border-r">
         <text>818万</text>
@@ -72,15 +72,16 @@
     </view>
   </view>
   <view class="goods-d-footer cf ui-border-t">
-    <view class="lf goods-d-footer-left">
-      <text class="iconfont icon-shoucang3"></text>
+    <view class="lf goods-d-footer-left" bindtap="requestFavorite">
+      <text class="iconfont icon-shoucang3 {{favoriteOn?'active':''}}"></text>
     </view>
     <view class="lf goods-d-footer-right">
       <button>立即约看</button>
       <button>联系经纪人</button>
     </view>
   </view>
-  <navigator url="/pages/index/index" hover-class="none" class="index-f-phone" style="bottom:230rpx;">
+  <text class="index-loadingImg" wx:if="{{loadingImg}}">正在加载...</text>
+  <navigator url="/pages/goods/goods"  hover-class="none"   class="index-f-phone" style="bottom:230rpx;">
     <text  class="iconfont icon-fangzi2" style="font-size:46rpx;top:17rpx;left:17rpx;"></text>
   </navigator>
   <button class="index-f-phone" style="bottom:120rpx;"   open-type="share" >

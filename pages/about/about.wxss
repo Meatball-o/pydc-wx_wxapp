@@ -19,7 +19,8 @@ page{
 .about view{
   background-color: #fff;
   color: #000;
-  padding: 8rpx;
+  padding: 20rpx;
   text-indent:56rpx;
   line-height: 56rpx;
+  border-radius: 4rpx;
 }

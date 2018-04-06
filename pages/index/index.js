@@ -4,24 +4,6 @@ const app = getApp()
 
 Page({
   data: {
-    paging: 0,
-    currPage: 1,//页码
-    totalPage: 5,// 总页码
-    imgUrls: [
-      'http://img02.tooopen.com/images/20150928/tooopen_sy_143912755726.jpg',
-      'http://img06.tooopen.com/images/20160818/tooopen_sy_175866434296.jpg',
-      'http://img06.tooopen.com/images/20160818/tooopen_sy_175833047715.jpg'
-    ],
-    indexNav: [
-      {img: "", text: 'unique_5'},
-      {img: 4, text: 'unique_4'},
-      {img: 3, text: 'unique_3'},
-      {img: 2, text: 'unique_2'},
-      {img: 1, text: 'unique_1'},
-      {img: 0, text: 'unique_0'},
-      {img: 5, text: 'unique_5'},
-      {img: 5, text: 'unique_5'},
-    ],
     indicatorDots: true,
     autoplay: true,
     interval: 5000,
@@ -31,30 +13,115 @@ Page({
     console.log(event)
   },
   //下拉刷新
-  onPullDownRefresh: function () {
-    wx.showNavigationBarLoading()
+  // onPullDownRefresh: function () {
+  //   wx.showNavigationBarLoading()
+  // },
+  requestHomeData: function () {
+    var vm = this
+    wx.showLoading({
+      title:"加载中"
+    })
+    wx.request({
+      method: "GET",
+      url: 'https://heiliuer.com/api/wxapp/home',
+      dataType: 'json',
+      header: {
+        'content-type': 'application/json' // 默认值
+      },
+      success(res) {
+        wx.hideLoading()
+        if(res.statusCode==200) {
+          var homeData = res.data.data
+          vm.setData({
+              homeData
+            }
+          )
+        } else{
+          wx.hideLoading()
+          wx.showModal({
+            title: '提示',
+            content: '请求出错',
+            showCancel:false,
+            success: function(res) {
+              if (res.confirm) {
+              }
+            }
+          })
+        }
+      },
+      fail(){
+        wx.hideLoading()
+        wx.showModal({
+          title: '提示',
+          content: '请求出错',
+          showCancel:false,
+          success: function(res) {
+            if (res.confirm) {
+            }
+          }
+        })
+      }
+    })
   },
-  requestDataList: function () {
-    var vm = this;
+  requestFavoriteList: function () {
+    var vm = this
+    if (vm.data.loading||vm._index_loaded) {
+      return
+    }
+    vm.setData({
+      loading: true
+    })
+    vm._index_curPage = vm._index_curPage || 1
     wx.request({
       method: "GET",
       url: 'https://heiliuer.com/api/wxapp/house',
       dataType: 'json',
       data: {
-        page: vm.data.currPage,
-        total: vm.data.totalPage,
+        page: vm._index_curPage,
+        limit: 10
       },
       header: {
         'content-type': 'application/json' // 默认值
       },
-      success: function (res) {
-        var dataList = (vm.data.dataList || []).concat(res.data.data.docs);
-        vm.setData(
-          {
-            dataList: dataList,
-            currPage: vm.data.currPage + 1,
+      success(res) {
+        if(res.statusCode==200) {
+          const {docs,page,pages}=res.data.data
+          const favoriteList = (vm.data.favoriteList || []).concat(docs)
+          if(page>=pages){
+            vm._index_loaded=true
           }
-        );
+          vm.setData({
+              favoriteList
+            }
+          )
+          vm._index_curPage++
+        }else{
+          wx.showModal({
+            title: '提示',
+            content: '请求出错',
+            showCancel:false,
+            success: function(res) {
+              if (res.confirm) {
+              }
+            }
+          })
+        }
+      },
+      fail(){
+        wx.showModal({
+          title: '提示',
+          content: '请求出错',
+          showCancel:false,
+          success: function(res) {
+            if (res.confirm) {
+            }
+          }
+        })
+      },
+      complete: function () {
+        vm.setData({
+          loading: false
+        })
       }
     })
   },
@@ -84,6 +151,7 @@ Page({
     }
   },
   onLoad: function () {
-    this.requestDataList()
+    this.requestFavoriteList()
+    this.requestHomeData()
   },
 })

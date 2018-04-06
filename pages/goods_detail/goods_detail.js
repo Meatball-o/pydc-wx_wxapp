@@ -1,6 +1,7 @@
 /**
  * Created by 丸子 on 2018-03-31.
  */
+const {getToken} = require('../../login')
 Page({
   data: {
     paging: 0,
@@ -9,11 +10,16 @@ Page({
     indicatorDots: true,
     autoplay: true,
     interval: 5000,
-    duration: 500
+    duration: 500,
+    favoriteOn:false
   },
+  // 数据
   requestDataList() {
     var vm = this;
-    var id=vm.data.id
+    var id=vm.data.id||"5ac73e97dd8fa225082fa9af"
+    vm.setData({
+      loading: true
+    })
     wx.request({
       method: "GET",
       url: 'https://heiliuer.com/api/wxapp/house/'+id,
@@ -28,6 +34,11 @@ Page({
             houseDetail
           }
         );
+      },
+      complete: function () {
+        vm.setData({
+          loadingImg: false
+        })
       }
     })
   },
@@ -44,6 +55,34 @@ Page({
         // 转发失败
       }
     }
+  },
+  requestFavorite() {
+    var vm = this;
+    wx.request({
+      method: "POST",
+      url: 'https://heiliuer.com/api/wxapp/favorite',
+      dataType: 'json',
+      header: {
+        'content-type': 'application/json',// 默认值
+        'Authorization': 'JWT '+getToken()// 默认值
+      },
+      data:{
+        houseId:vm.data.id
+      },
+      success: function (res) {
+        var {favoriteOn} = res.data.data
+        vm.setData(
+          {
+            favoriteOn
+          }
+        );
+      },
+      complete: function () {
+        vm.setData({
+          loadingImg: false
+        })
+      }
+    })
   },
   onLoad: function (param) {
     var vm=this;

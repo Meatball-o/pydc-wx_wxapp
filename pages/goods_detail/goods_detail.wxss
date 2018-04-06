@@ -132,6 +132,16 @@
 background-color: #e03236;
   border:none ;
 }
+.index-loadingImg{
+  display: block;
+  position: fixed;
+  top:50%;
+  left: 50%;
+  z-index: 111;
+}
+.goods-d-footer-left .active{
+  color: #F5C545;
+}
 
 
 

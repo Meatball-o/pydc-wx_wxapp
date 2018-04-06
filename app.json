@@ -2,10 +2,10 @@
   "pages": [
     "pages/index/index",
     "pages/my/my",
-    "pages/search/search",
     "pages/goods/goods",
-    "pages/about/about",
     "pages/goods_detail/goods_detail",
+    "pages/search/search",
+    "pages/about/about",
     "pages/feedback/feedback",
     "pages/business/business",
     "pages/favorite/favorite",
