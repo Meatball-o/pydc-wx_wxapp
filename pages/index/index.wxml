@@ -6,7 +6,11 @@
       <text class="iconfont icon-sousuo1"></text>
       请输入区域，版块或楼盘
     </navigator>
-    <image src="../img/home_banner.png"></image>
+    <swiper indicator-dots="{{indicatorDots}}" style="height: 300rpx" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+    <swiper-item wx:for="{{imgUrls}}" wx:key="indexImgs">
+    <image src="{{item}}" class="slide-image" width="355" height="150"/>
+    </swiper-item>
+    </swiper>
   </view>
   <!--nav-->
   <view class="index-nav">
@@ -46,14 +50,13 @@
     </view>
   </view>
   <!--轮播-->
-  <!--<swiper indicator-dots="{{indicatorDots}}" style="height: 300rpx" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">-->
-  <!--<swiper-item wx:for="{{imgUrls}}" wx:key="indexImgs">-->
-  <!--<image src="{{item}}" class="slide-image" width="355" height="150"/>-->
-  <!--</swiper-item>-->
-  <!--</swiper>-->
-  <navigator class="index-banner" hover-class="none">
-    <image src="https://alicdn.leyoujia.com/wap/images/index/hfzj-banner@2x.png"></image>
-  </navigator>
+  <swiper indicator-dots="{{indicatorDots}}" style="height: 300rpx" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+  <swiper-item wx:for="{{imgUrls}}" wx:key="indexImgs">
+    <navigator class="index-banner" hover-class="none">
+      <image src="{{item}}" class="slide-image" width="355" height="150"/>
+    </navigator>
+  </swiper-item>
+  </swiper>
   <!--主体-->
   <view class="index-tc"></view>
   <view class="index-con-t">
@@ -119,8 +122,6 @@
   <view class="index-con-m">
     <view class="index-con-b-title cf ui-border-b">
       <text class="lf">猜您喜欢</text>
-      <text class="iconfont icon-youjiantou1 rt"></text>
-      <text class="rt">查看更多</text>
     </view>
     <navigator hover-class="none" url="/pages/goods_detail/goods_detail?id={{item.id}}"
                class="cf index-con-t-con ui-border-b"

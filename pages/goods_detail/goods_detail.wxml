@@ -21,7 +21,7 @@
       </view>
     </view>
     <view class="goods-d-con">
-      <view>
+      <view class="goods-d-con-view">
         <text>单价:</text>
         <text>8888</text>
       </view>

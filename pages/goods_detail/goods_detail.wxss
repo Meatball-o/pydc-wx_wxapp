@@ -53,7 +53,7 @@
 .goods-d-con view:last-child{
   width: 80%;
 }
-.goods-d-con>view>text:first-child{
+.goods-d-con-view > text:first-child{
   color: #aaa;
 }
 .goods-d-con view:last-child text:first-child{

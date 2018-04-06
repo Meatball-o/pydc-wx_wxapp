@@ -1,4 +1,5 @@
 <view>
+  <image style="width: 100%" src="../img/home_banner.png"></image>
   <view class="my">
     <navigator class="cf favorite ui-border-b" url="/pages/favorite/favorite" hover-class="none">
       <text class="iconfont icon-shoucang2"></text>

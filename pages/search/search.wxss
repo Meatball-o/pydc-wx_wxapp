@@ -24,7 +24,7 @@
   border-bottom-left-radius:6rpx;
   border: 1px solid #ccc;
 }
-.search-con view{
+.search-con navigator{
   width: 12%;
   background-color: #fff;
   box-sizing: border-box;

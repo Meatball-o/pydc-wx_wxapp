@@ -4,6 +4,15 @@ const app = getApp()
 
 Page({
   data:{
-    focus:true
+    focus:true,
+    key:""
+  },
+  bindInput(event) {
+    var vm=this
+    setTimeout(function () {
+      vm.setData({
+        key:event.detail.value
+      })
+    })
   }
 })
