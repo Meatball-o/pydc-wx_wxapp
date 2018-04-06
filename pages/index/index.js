@@ -19,7 +19,7 @@ Page({
   requestHomeData: function () {
     var vm = this
     wx.showLoading({
-      title:"加载中"
+      title: "加载中"
     })
     wx.request({
       method: "GET",
@@ -30,19 +30,19 @@ Page({
       },
       success(res) {
         wx.hideLoading()
-        if(res.statusCode==200) {
+        if (res.statusCode == 200) {
           var homeData = res.data.data
           vm.setData({
               homeData
             }
           )
-        } else{
+        } else {
           wx.hideLoading()
           wx.showModal({
             title: '提示',
             content: '请求出错',
-            showCancel:false,
-            success: function(res) {
+            showCancel: false,
+            success: function (res) {
               if (res.confirm) {
               }
             }
@@ -54,8 +54,8 @@ Page({
         wx.showModal({
           title: '提示',
           content: '请求出错',
-          showCancel:false,
-          success: function(res) {
+          showCancel: false,
+          success: function (res) {
             if (res.confirm) {
             }
           }
@@ -65,7 +65,7 @@ Page({
   },
   requestFavoriteList: function () {
     var vm = this
-    if (vm.data.loading||vm._index_loaded) {
+    if (vm.data.loading || vm._index_loaded) {
       return
     }
     vm.setData({
@@ -74,33 +74,28 @@ Page({
     vm._index_curPage = vm._index_curPage || 1
     wx.request({
       method: "GET",
-      url: 'https://heiliuer.com/api/wxapp/house',
+      url: 'https://heiliuer.com/api/wxapp/home/user_like',
       dataType: 'json',
       data: {
         page: vm._index_curPage,
         limit: 10
       },
-      header: {
-        'content-type': 'application/json' // 默认值
-      },
+      header: {},
       success(res) {
-        if(res.statusCode==200) {
-          const {docs,page,pages}=res.data.data
+        if (res.statusCode == 200) {
+          const {docs, page, pages} = res.data.data
           const favoriteList = (vm.data.favoriteList || []).concat(docs)
-          if(page>=pages){
-            vm._index_loaded=true
+          if (page >= pages) {
+            vm._index_loaded = true
           }
-          vm.setData({
-              favoriteList
-            }
-          )
+          vm.setData({favoriteList})
           vm._index_curPage++
-        }else{
+        } else {
           wx.showModal({
             title: '提示',
             content: '请求出错',
-            showCancel:false,
-            success: function(res) {
+            showCancel: false,
+            success: function (res) {
               if (res.confirm) {
               }
             }
@@ -111,8 +106,8 @@ Page({
         wx.showModal({
           title: '提示',
           content: '请求出错',
-          showCancel:false,
-          success: function(res) {
+          showCancel: false,
+          success: function (res) {
             if (res.confirm) {
             }
           }
@@ -136,8 +131,8 @@ Page({
       }
     })
   },
-  onShareAppMessage: function (res) {
-    const vm = this;
+  onShareAppMessage (res) {
+    const vm = this
     return {
       title: '蒲悦地产',
       path: '/pages/index/index',
@@ -150,8 +145,8 @@ Page({
       }
     }
   },
-  onLoad: function () {
+  onLoad () {
     this.requestFavoriteList()
     this.requestHomeData()
-  },
+  }
 })

@@ -11,29 +11,29 @@ Page({
     autoplay: true,
     interval: 5000,
     duration: 500,
-    favoriteOn:false
+    favoriteOn: false
   },
   // 数据
   requestDataList() {
     var vm = this;
-    var id=vm.data.id||"5ac73e97dd8fa225082fa9af"
+    var id = vm.data.id || "5ac73e97dd8fa225082fa9af"
     vm.setData({
       loading: true
     })
     wx.request({
       method: "GET",
-      url: 'https://heiliuer.com/api/wxapp/house/'+id,
+      url: 'https://heiliuer.com/api/wxapp/house/' + id,
       dataType: 'json',
       header: {
-        'content-type': 'application/json' // 默认值
+        'Authorization': 'JWT ' + getToken()
       },
       success: function (res) {
-        var houseDetail = res.data.data;
-        vm.setData(
-          {
-            houseDetail
-          }
-        );
+        const houseDetail = res.data.data
+        const {favoriteOn} = houseDetail
+        vm.setData({
+          houseDetail,
+          favoriteOn
+        })
       },
       complete: function () {
         vm.setData({
@@ -43,11 +43,11 @@ Page({
     })
   },
   onShareAppMessage: function (res) {
-    const vm=this;
+    const vm = this;
     return {
       title: '蒲悦地产',
       path: '/pages/index/index',
-      form:'menu',
+      form: 'menu',
       success: function (res) {
         // 转发成功
       },
@@ -57,24 +57,21 @@ Page({
     }
   },
   requestFavorite() {
-    var vm = this;
+    var vm = this
+    console.log('JWT ' + getToken())
     wx.request({
       method: "POST",
       url: 'https://heiliuer.com/api/wxapp/favorite',
       dataType: 'json',
       header: {
-        'content-type': 'application/json',// 默认值
-        'Authorization': 'JWT '+getToken()// 默认值
+        'Authorization': 'JWT ' + getToken()
       },
-      data:{
-        houseId:vm.data.id
+      data: {
+        houseId: vm.data.id
       },
       success: function (res) {
         var {favoriteOn} = res.data.data
-        vm.setData(
-          {
-            favoriteOn
-          }
+        vm.setData({favoriteOn}
         );
       },
       complete: function () {
@@ -85,11 +82,10 @@ Page({
     })
   },
   onLoad: function (param) {
-    var vm=this;
+    var vm = this;
     vm.setData({
-      id:param.id
+      id: param.id
     })
     this.requestDataList()
-
-  },
+  }
 })

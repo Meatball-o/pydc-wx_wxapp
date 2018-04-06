@@ -35,8 +35,9 @@ module.exports.login = function () {
 // 获取存储token 查看用户是否登录
 module.exports.getToken = function () {
   try {
-    var token = wx.getStorageSync('token')
-      return token
-  } catch (e) {}
-  return null
+    var token = (wx.getStorageSync('token') || '').trim()
+    return token
+  } catch (e) {
+  }
+  return ''
 }
