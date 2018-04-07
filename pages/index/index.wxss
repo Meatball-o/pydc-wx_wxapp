@@ -3,7 +3,7 @@
   width:750rpx;
   box-sizing: border-box;
   height: 306rpx;
-  padding:0 30rpx 30rpx 30rpx;
+  padding:30rpx;
 }
 .index-banner image{
   width:100%;
@@ -41,7 +41,7 @@
 }
 .index-nav .index-nav-con{
   width: 100%;
-  margin: 22rpx 0;
+  margin: 10rpx 0;
 }
 .index-nav .index-nav-con .index-con-t-con{
   width: 25%;
@@ -107,16 +107,24 @@
 .index-con-b-title{
   width: 100%;
   box-sizing: border-box;
+  position: relative;
 }
 .index-con-b-title text{
   height: 100rpx;
-  line-height: 100rpx;
+  line-height: 112rpx;
   vertical-align: middle;
+}
+.index-con-b-title .iconfont{
+  position: absolute;
+  top: -2rpx;
+  right: 0;
 }
 .index-con-b-title navigator{
   height: 100rpx;
-  line-height: 100rpx;
+  line-height: 112rpx;
   vertical-align: middle;
+  padding-right: 40rpx;
+
 }
 .index-con-b-title text:first-child{
   font-weight: bold;
@@ -162,9 +170,23 @@
 .index-con-c .index-con-price text:last-child{
   font-size: 30rpx;
 }
-.index-loading{
-  margin:0;
-  text-align: center;
-  height: 100rpx;
-  line-height: 100rpx;
+.index-xw-p{
+  width: 750rpx;
+  height: 88rpx;
+  line-height: 88rpx;
+  box-sizing: border-box;
+  padding: 0 30rpx;
+  position: relative;
+}
+.index-xw{
+  width: 566rpx;
+  height: 88rpx;
+  line-height: 94rpx;
+  padding-left: 26rpx;
+}
+.index-xw-p .iconfont:first-child{
+  font-weight: bold;
+  color: red;
+  position: absolute;
+  top:0rpx;
 }

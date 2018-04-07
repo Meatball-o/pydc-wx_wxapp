@@ -32,3 +32,9 @@
   font-size: 35rpx;
   color: #8CC9BC;
 }
+
+.personal-info{
+  width: 750rpx;
+  height: 300rpx;
+  background-color: red;
+}

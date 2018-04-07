@@ -16,4 +16,5 @@
       </view>
     </navigator>
   </view>
+  <view class="index-loading">没有更多数据了...</view>
 </scroll-view>

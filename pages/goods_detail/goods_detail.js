@@ -1,6 +1,7 @@
 /**
  * Created by 丸子 on 2018-03-31.
  */
+const {calling} = require('../../util')
 const {getToken} = require('../../login')
 Page({
   data: {
@@ -14,6 +15,7 @@ Page({
     favoriteOn: false
   },
   // 数据
+  calling,
   requestDataList() {
     var vm = this;
     var id = vm.data.id || "5ac73e97dd8fa225082fa9af"
@@ -34,6 +36,9 @@ Page({
           houseDetail,
           favoriteOn
         })
+        wx.setNavigationBarTitle({
+          title: vm.data.houseDetail.name//页面标题为路由参数
+        })
       },
       complete: function () {
         vm.setData({
@@ -42,7 +47,7 @@ Page({
       }
     })
   },
-  onShareAppMessage: function (res) {
+  onShareAppMessage(res) {
     const vm = this;
     return {
       title: '蒲悦地产',
@@ -79,6 +84,15 @@ Page({
           loadingImg: false
         })
       }
+    })
+  },
+  previewImage() {
+    // var vm = this
+    // var houseDetail = vm.data.houseDetail
+    // houseDetail = houseDetail.split(",");
+    // console.log(houseDetail);
+    wx.previewImage({
+      urls: [] // 需要预览的图片http链接列表
     })
   },
   onLoad: function (param) {

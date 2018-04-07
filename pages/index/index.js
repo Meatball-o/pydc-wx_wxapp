@@ -1,5 +1,6 @@
 //index.js
 //获取应用实例
+const {calling} = require('../../util')
 const app = getApp()
 
 Page({
@@ -7,9 +8,9 @@ Page({
     indicatorDots: true,
     autoplay: true,
     interval: 5000,
-    duration: 500
+    duration: 500,
   },
-  tapName: function (event) {
+  tapName(event) {
     console.log(event)
   },
   //下拉刷新
@@ -49,7 +50,7 @@ Page({
           })
         }
       },
-      fail(){
+      fail() {
         wx.hideLoading()
         wx.showModal({
           title: '提示',
@@ -102,7 +103,7 @@ Page({
           })
         }
       },
-      fail(){
+      fail() {
         wx.showModal({
           title: '提示',
           content: '请求出错',
@@ -120,18 +121,8 @@ Page({
       }
     })
   },
-  calling: function () {
-    wx.makePhoneCall({
-      phoneNumber: '15319518745',
-      success: function () {
-        console.log("拨打电话成功！")
-      },
-      fail: function () {
-        console.log("拨打电话失败！")
-      }
-    })
-  },
-  onShareAppMessage (res) {
+  calling,
+  onShareAppMessage(res) {
     const vm = this
     return {
       title: '蒲悦地产',
@@ -145,7 +136,7 @@ Page({
       }
     }
   },
-  onLoad () {
+  onLoad() {
     this.requestFavoriteList()
     this.requestHomeData()
   }

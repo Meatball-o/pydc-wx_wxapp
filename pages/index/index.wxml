@@ -7,7 +7,7 @@
        <text class="iconfont icon-sousuo1"></text>
        请输入区域，版块或楼盘
      </navigator>
-     <image  style="width: 100%" src="{{homeData.banner[0].imageUrl}}"></image>
+     <image style="width: 100%" src="{{homeData.banner[0].imageUrl}}"></image>
    </view>
    <!--nav-->
    <view class="index-nav">
@@ -22,8 +22,29 @@
        </navigator>
      </view>
    </view>
+   <!--头条新闻-->
+   <view class="index-tc"></view>
+   <view class="index-xw-p cf">
+     <text class="iconfont icon-laba2 lf"></text>
+     <swiper class="index-xw swiper-no-swiping lf"
+             interval="{{interval}}"
+             duration="{{duration}}"
+             vertical="true">
+       <swiper-item  wx:for="{{homeData.recommendList}}"
+                     wx:key="indexImgs"
+                     class="lf"
+                     style="width: 80%;padding-left: 30rpx"
+                     vertical="true">
+         <navigator url=""  hover-class="none" class=" index-xw-con">
+           <view>{{item.name}}</view>
+         </navigator>
+       </swiper-item>
+     </swiper>
+     <text class="iconfont icon-youjiantou1 rt"></text>
+   </view>
+   <view class="index-tc"></view>
    <!--轮播-->
-   <swiper indicator-dots="{{indicatorDots}}" style="height: 300rpx" autoplay="{{autoplay}}" interval="{{interval}}"
+   <swiper  style="height: 330rpx" autoplay="{{autoplay}}" interval="{{interval}}"
            duration="{{duration}}">
      <swiper-item wx:for="{{homeData.banner2}}" wx:key="indexImgs">
        <navigator class="index-banner" hover-class="none">
@@ -77,6 +98,7 @@
     </navigator>
   </view>
   <view class="index-loading" wx:if="{{loading}}">正在加载...</view>
+  <view class="index-loading">没有更多数据了...</view>
   <view class="index-f-phone" style="line-height: 56rpx">
     <text bindtap="calling" class="iconfont icon-dianhua3"></text>
   </view>

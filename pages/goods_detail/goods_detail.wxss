@@ -1,4 +1,4 @@
-.goods_detail swiper{
+.goods_detail>swiper{
   width: 750rpx;
   height: 562rpx;
 }
@@ -112,6 +112,7 @@
 .goods-d-footer-left text{
   display: block;
   font-size: 40rpx;
+  color: #666666;
 }
 .goods-d-footer-right{
   width: 84%;
@@ -142,6 +143,42 @@ background-color: #e03236;
 .goods-d-footer-left .active{
   color: #F5C545;
 }
-
+.sell-door{
+  width: 750rpx;
+}
+.sell-door-con{
+  width: 100%;
+  padding:30rpx;
+  box-sizing: border-box;
+}
+.sell-door-con-ov{
+  display: flex;
+  background-color: white;
+  overflow-y: hidden;
+}
+.sell-door-list{
+  float: left;
+  width: 296rpx;
+  height: 321rpx;
+  padding-right: 20rpx;
+}
+.sell-door-list:last-child{
+  padding-right:0;
+}
+.sell-door-list image{
+  float: left;
+  width: 296rpx;
+  height: 222rpx;
+}
+.sell-door-list-explain text{
+ display: inline-block;
+}
+.sell-door-list-explain text:first-child{
+  padding: 8rpx 0;
+}
+.sell-door-list-explain text:last-child{
+  font-size: 24rpx;
+  color: red;
+}
 
 
