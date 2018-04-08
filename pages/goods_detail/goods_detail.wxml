@@ -64,7 +64,7 @@
       <view class="sell-door-con">
         <view class="sell-door-con-ov">
           <view class="sell-door-list" wx:for="{{houseDetail.images}}" wx:key="{{index}}">
-            <image bindtap="previewImage" src="{{item.url}}"></image>
+            <image bindtap="previewImage" data-url="{{item.url}}" src="{{item.url}}"></image>
             <view class="sell-door-list-explain">
               <text>0室1厅1卫 33㎡</text>
               <text>参考总价：76万</text>

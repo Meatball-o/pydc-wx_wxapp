@@ -15,34 +15,48 @@ Page({
   },
   requestDataList: function () {
     var vm = this;
+    if (vm.data.loading || vm._index_loaded) {
+      return
+    }
+    vm.setData({
+      loading: true
+    })
+    vm._index_curPage = vm._index_curPage || 1
     wx.request({
       method: "GET",
       url: 'https://heiliuer.com/api/wxapp/house',
       dataType: 'json',
       data: {
-        page: vm.data.currPage,
-        total: vm.data.totalPage,
+        page: vm._index_curPage,
+        limit: 10
       },
       header: {
-        'content-type': 'application/json' // 默认值
       },
       success: function (res) {
-        var dataList = (vm.data.dataList || []).concat(res.data.data.docs);
+        const {docs, page, pages} = res.data.data
+        var dataList = (vm.data.dataList || []).concat(docs)
+        if (page >= pages) {
+          vm._index_loaded = true
+          vm.setData({
+            loaded: true
+          })
+        }
         vm.setData(
           {
             dataList: dataList,
             currPage: vm.data.currPage + 1,
           }
         );
+        vm._index_curPage++
       }
     })
   },
   onShareAppMessage: function (res) {
-    const vm=this;
+    const vm = this;
     return {
       title: '蒲悦地产',
       path: '/pages/index/index',
-      form:'menu',
+      form: 'menu',
       success: function (res) {
         // 转发成功
       },

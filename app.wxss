@@ -191,7 +191,9 @@
 
 
 
-
+.weui-tabbar{
+  height: 60rpx !important;
+}
 .index-loading{
   margin:0;
   text-align: center;

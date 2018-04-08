@@ -98,7 +98,7 @@
     </navigator>
   </view>
   <view class="index-loading" wx:if="{{loading}}">正在加载...</view>
-  <view class="index-loading">没有更多数据了...</view>
+  <view class="index-loading" wx:if="{{loaded===true}}">没有更多数据了...</view>
   <view class="index-f-phone" style="line-height: 56rpx">
     <text bindtap="calling" class="iconfont icon-dianhua3"></text>
   </view>

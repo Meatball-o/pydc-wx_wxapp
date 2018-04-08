@@ -88,6 +88,9 @@ Page({
           const favoriteList = (vm.data.favoriteList || []).concat(docs)
           if (page >= pages) {
             vm._index_loaded = true
+            vm.setData({
+              loaded:true
+            })
           }
           vm.setData({favoriteList})
           vm._index_curPage++

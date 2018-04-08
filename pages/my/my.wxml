@@ -1,7 +1,8 @@
 <view>
   <view class="personal-info">
-    <image src="{{userInfo.nickName}}"></image>
-    <view>{{res.userInfo.nickName}}fff</view>
+    <image class="s-image" src="{{userInfo.avatarUrl}}"></image>
+    <view class="b-image" style="background-image: url({{userInfo.avatarUrl}})"></view>
+    <view class="py-name">{{userInfo.nickName}}</view>
   </view>
   <view class="my">
     <navigator class="cf favorite ui-border-b" url="/pages/favorite/favorite" hover-class="none">

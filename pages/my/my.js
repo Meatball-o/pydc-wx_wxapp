@@ -1,5 +1,7 @@
+var {getToken} = require("../../login")
 Page({
-  data: {},
+  data: {
+  },
   onShareAppMessage: function (res) {
     const vm = this;
     return {
@@ -14,4 +16,45 @@ Page({
       }
     }
   },
+  requestUserInfo(res) {
+    var vm = this
+    wx.request({
+      method: "PUT",
+      url: 'https://heiliuer.com/api/wxapp/wxuser',
+      dataType: 'json',
+      header: {
+        'Authorization': 'JWT ' + getToken()
+      },
+      data: {
+        userInfo:res.userInfo
+      },
+      success: function (res) {
+      },
+      complete: function () {
+      }
+    })
+  },
+  getUserInfo:function () {
+    var vm=this
+    wx.getUserInfo({
+      success: function(res) {
+        var userInfo = res.userInfo
+        var nickName = userInfo.nickName
+        var avatarUrl = userInfo.avatarUrl
+        var gender = userInfo.gender //性别 0：未知、1：男、2：女
+        var province = userInfo.province
+        var city = userInfo.city
+        var country = userInfo.country
+        var _res=res
+        console.log(res);
+        vm.setData({
+          userInfo:res.userInfo
+        })
+        vm.requestUserInfo(res)
+      }
+    })
+  },
+  onLoad:function () {
+    this.getUserInfo()
+  }
 })

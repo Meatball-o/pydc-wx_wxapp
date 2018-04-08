@@ -86,13 +86,17 @@ Page({
       }
     })
   },
-  previewImage() {
-    // var vm = this
-    // var houseDetail = vm.data.houseDetail
+  previewImage(event) {
+    var vm = this
+    var url=event.currentTarget.dataset.url
+    var imgArr = vm.data.houseDetail.images.map(function (img,index) {
+      return img.url
+    })
     // houseDetail = houseDetail.split(",");
     // console.log(houseDetail);
     wx.previewImage({
-      urls: [] // 需要预览的图片http链接列表
+      current: url, // 当前显示图片的http链接
+      urls: imgArr // 需要预览的图片http链接列表
     })
   },
   onLoad: function (param) {

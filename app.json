@@ -1,10 +1,10 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/goods_detail/goods_detail",
+    "pages/search/search",
     "pages/my/my",
     "pages/goods/goods",
-    "pages/search/search",
+    "pages/goods_detail/goods_detail",
     "pages/about/about",
     "pages/feedback/feedback",
     "pages/business/business",

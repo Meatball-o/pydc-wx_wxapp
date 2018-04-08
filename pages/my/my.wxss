@@ -35,6 +35,40 @@
 
 .personal-info{
   width: 750rpx;
-  height: 300rpx;
-  background-color: red;
+  height: 360rpx;
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
+}
+.personal-info .s-image{
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 60rpx;
+  margin: 0 auto;
+  position: absolute;
+  z-index: 99;
+  top: 100rpx;
+  left: 30rpx;
+}
+.personal-info .py-name{
+  width: 660rpx;
+  box-sizing: border-box;
+  position: absolute;
+  text-align: left;
+  z-index: 90;
+  top: 100rpx;
+  left: 90rpx;
+  height: 120rpx;
+  line-height: 120rpx;
+  padding-left: 80rpx;
+  background-color: rgba(255, 255, 255, 0.32);
+}
+.personal-info .b-image{
+  width: 750rpx;
+  height: 360rpx;
+  background-position: center;
+  background-size: cover;
+  -webkit-filter: blur(10px);
+  filter: blur(10px);
+  filter: progid:DXImageTransform.Microsoft.Blur(PixelRadius=10, MakeShadow=false);
 }
