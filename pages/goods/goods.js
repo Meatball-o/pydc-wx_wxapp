@@ -1,7 +1,7 @@
 /**
  * Created by 丸子 on 2018-03-31.
  */
-
+const {relativeurl} = require('../../util')
 const app = getApp()
 
 Page({
@@ -24,7 +24,7 @@ Page({
     vm._index_curPage = vm._index_curPage || 1
     wx.request({
       method: "GET",
-      url: 'https://heiliuer.com/api/wxapp/house',
+      url: relativeurl + 'api/wxapp/house',
       dataType: 'json',
       data: {
         page: vm._index_curPage,

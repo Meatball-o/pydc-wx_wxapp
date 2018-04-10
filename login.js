@@ -1,6 +1,7 @@
 /**
  * Created by 丸子 on 2018/4/7.
  */
+const {relativeurl} = require('./util')
 function saveToken(token) {
   try {
     wx.setStorageSync('token', token)
@@ -13,11 +14,11 @@ module.exports.login = function () {
   wx.login({
     success: function (res) {
       if (res.code) {
-        console.log(res);
+        //console.log(res);
         //发起网络请求
         wx.request({
           method: "POST",
-          url: 'https://heiliuer.com/api/wxapp/session/login',
+          url: relativeurl + 'api/wxapp/session/login',
           data: {
             code: res.code,
           },
