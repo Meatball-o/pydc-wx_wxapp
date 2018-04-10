@@ -24,10 +24,44 @@
 request body:
 ```json
 {
-  houseId:"xxxxx"
+  "houseId":"xxxxx"
 }
 ```
 
 #### [005] 足迹-列表 （分页）
 
 [GET] /api/wxapp/user_track
+
+
+#### [006] 收藏-增加
+
+[POST] /api/wxapp/favorite
+
+request body:
+```json
+{
+  "houseId":"xxxxx"
+}
+```
+
+#### [007] 收藏-列表 （分页）
+
+[GET] /api/wxapp/favorite
+
+
+#### [008] 反馈-增加
+
+[POST] /api/wxapp/feedback
+
+request body:
+```json
+{
+  "content":"反馈内容"
+}
+```
+
+#### [009] 反馈-列表 （分页）
+
+[GET] /api/wxapp/feedback
+
+
