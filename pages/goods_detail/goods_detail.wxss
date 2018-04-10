@@ -117,6 +117,16 @@
 .goods-d-footer-right{
   width: 84%;
 }
+.goods-d-footer-right navigator{
+  width: 50%;
+  height: 100rpx;
+  line-height: 100rpx;
+  background-color: #e03236;
+  display: block;
+  text-align: center;
+  font-size: 36rpx;
+  color: #fff;
+}
 .goods-d-footer-right button{
   display: inline-block;
   border-radius: 0;
@@ -127,10 +137,6 @@
 }
 .goods-d-footer-right button:first-child{
   background-color:#F5C545 ;
-  border:none ;
-}
-.goods-d-footer-right button:last-child{
-background-color: #e03236;
   border:none ;
 }
 .index-loadingImg{
@@ -155,6 +161,7 @@ background-color: #e03236;
   display: flex;
   background-color: white;
   overflow-y: hidden;
+  -webkit-overflow-scrolling:touch;
 }
 .sell-door-list{
   float: left;
