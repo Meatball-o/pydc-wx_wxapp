@@ -1,6 +1,7 @@
 //index.js
 //获取应用实例
 const {relativeurl} = require('../../util')
+const {getToken} = require('../../login')
 const app = getApp()
 Page({
   data: {
@@ -15,23 +16,22 @@ Page({
     var vm = this;
     wx.request({
       method: "GET",
-      url: relativeurl + 'api/wxapp/house',
+      url: relativeurl + 'api/wxapp/user_track',
       dataType: 'json',
-      data: {
-        page: vm.data.currPage,
-        total: vm.data.totalPage,
-      },
+      data: {},
       header: {
-        'content-type': 'application/json' // 默认值
+        'content-type': 'application/json', // 默认值
+	      'Authorization': 'JWT ' + getToken()
       },
       success: function (res) {
-        var dataList = (vm.data.dataList || []).concat(res.data.data.docs);
+        console.log(res);
+        /*var dataList = (vm.data.dataList || []).concat(res.data.data.docs);
         vm.setData(
           {
             dataList: dataList,
             currPage: vm.data.currPage + 1,
           }
-        );
+        );*/
       }
     })
   },

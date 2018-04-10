@@ -2,13 +2,12 @@
  * Created by 丸子 on 2018/4/7.
  */
 const {relativeurl} = require('./util')
-function saveToken(token) {
-  try {
-    wx.setStorageSync('token', token)
-  } catch (e) {
-  }
+
+module.exports.saveToken = function(token) {
+	try {
+		wx.setStorageSync('token', token)
+	} catch (e) {}
 }
-module.exports.saveToken = saveToken
 // 登录
 module.exports.login = function () {
   wx.login({
@@ -23,8 +22,10 @@ module.exports.login = function () {
             code: res.code,
           },
           success(res){
-            const {token} = res.data.data
-            saveToken(token)
+            if(res.data.success){
+	            const {token} = res.data.data
+	            exports.saveToken(token)
+            }
           }
         })
       } else {

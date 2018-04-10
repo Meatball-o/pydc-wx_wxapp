@@ -1,8 +1,7 @@
 /**
  * Created by 丸子 on 2018-03-31.
  */
-const {calling} = require('../../util')
-const {relativeurl} = require('../../util')
+const {calling,relativeurl} = require('../../util')
 const {getToken} = require('../../login')
 Page({
   data: {
@@ -100,11 +99,32 @@ Page({
       urls: imgArr // 需要预览的图片http链接列表
     })
   },
+	addTrack(){
+		var vm = this
+		wx.request({
+			method: "POST",
+			url: relativeurl + 'api/wxapp/user_track',
+			dataType: 'json',
+			header: {
+				'Authorization': 'JWT ' + getToken()
+			},
+			data: {
+				houseId: vm.data.id
+			},
+			success: function (res) {
+				console.log(res);
+			},
+			complete: function () {
+
+			}
+		})
+	},
   onLoad: function (param) {
     var vm = this;
     vm.setData({
       id: param.id
     })
+    this.addTrack()
     this.requestDataList()
   }
 })
