@@ -1,7 +1,7 @@
 <view class="goods_detail">
   <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
     <swiper-item wx:for="{{houseDetail.images}}" wx:key="{{index}}">
-      <image src="{{item.url}}" class="slide-image"/>
+      <image bindtap="previewImageTop" data-url="{{item.url}}"  src="{{item.url}}" class="slide-image"/>
     </swiper-item>
   </swiper>
   <view class="goods-d-text">
@@ -91,9 +91,9 @@
     <view class="lf goods-d-footer-left" bindtap="requestFavorite">
       <text class="iconfont icon-shoucang1 {{favoriteOn?'active':''}}"></text>
     </view>
-    <view class="lf goods-d-footer-right">
-      <button bindtap="calling">立即约看</button>
-      <button bindtap="calling">联系经纪人</button>
+    <view class="lf goods-d-footer-right cf">
+      <button bindtap="calling" class="lf">立即约看</button>
+      <navigator url="/pages/about/about" class="lf">关于我们</navigator>
     </view>
   </view>
   <text class="index-loadingImg" wx:if="{{loadingImg}}">正在加载...</text>

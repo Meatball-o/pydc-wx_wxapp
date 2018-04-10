@@ -221,6 +221,7 @@ button::after {
   position: absolute;
   top:14rpx;
   left: 10rpx;
+  color: rgba(99, 91, 102, 0.91);
 }
 
 page{
@@ -248,12 +249,13 @@ page{
   background-color: #f3f3f3;
 }
 /*100%列表*/
-.index-con-m{
+.index-con-m,.index-con-new{
   width: 750rpx;
   box-sizing: border-box;
   padding-left:30rpx;
   padding-right: 30rpx;
   display: block;
+  margin-top: 30rpx;
 }
 .index-con-m .index-con-t-con{
   width:100%;
@@ -270,30 +272,42 @@ page{
   box-sizing: border-box;
   padding-left: 20rpx;
 }
-.index-con-mc-title{
+.index-con-m .index-con-mc-title,.index-con-new .index-con-mc-title{
   display: -webkit-box;
   font-size:28rpx;
   color:#000000;
   line-height: 40rpx;
-  word-break: break-all;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp:2;
-  overflow: hidden;
-  text-overflow:ellipsis;
 }
-.index-con-mc-address{
+.index-con-m .index-con-mc-address,.index-con-new .index-con-mc-address{
   display: block;
   color: #666;
   font-size: 26rpx;
   padding: 6rpx 0;
 }
-.index-con-mc-price{
+.index-con-m .index-con-mc-price,.index-con-new .index-con-mc-price{
   color: red;
   font-size: 24rpx;
 }
-.index-con-mc-price i{
+.index-con-m .index-con-mc-price i,.index-con-new .index-con-mc-price i{
   font-size: 30rpx;
 }
+/*goods 100%class切换*/
+.index-con-new image{
+  width: 330rpx;
+  height: 300rpx;
+}
+.index-con-new .index-con-t-con{
+  width: 330rpx;
+  box-sizing: border-box;
+}
+.index-con-new .index-con-t-con:nth-child(2n-1){
+  margin-right: 30rpx;
+}
+.index-con-new .index-con-mc{
+  width: 330rpx;
+  height: 150rpx;
+}
+
 
 .ui-border-b:before {
   border-bottom: 1px solid #e9e9e9;

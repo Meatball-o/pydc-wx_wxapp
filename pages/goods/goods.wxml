@@ -1,10 +1,12 @@
 <scroll-view scroll-y bindscrolltolower="requestDataList" style="height: 700px;">
   <view class="goods-title ui-border-b">
-    <text>销量</text>
-    <text>价格</text>
+    <text class="py-xl">销量</text>
+    <text class="py-price" bindtap="menuClick">价格</text>
+    <text class="iconfont icon-weibiaoti12"></text>
   </view>
-  <view class="index-con-m">
-    <navigator url="/pages/goods_detail/goods_detail?id={{item.id}}" class="cf index-con-t-con ui-border-b" wx:for="{{dataList}}"
+  <view class=" index-con-new">
+    <navigator url="/pages/goods_detail/goods_detail?id={{item.id}}" class="cf lf index-con-t-con ui-border-b"
+               wx:for="{{dataList}}"
                wx:key="indexCon">
       <image src="{{item.coverImage.url}}"></image>
       <view class="index-con-mc rt">
