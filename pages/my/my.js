@@ -4,7 +4,7 @@ Page({
   data: {
   },
   onShareAppMessage: function (res) {
-    const vm = this;
+    const vm = this
     return {
       title: '蒲悦地产',
       path: '/pages/index/index',
@@ -47,7 +47,7 @@ Page({
         var city = userInfo.city
         var country = userInfo.country
         var _res=res
-        //console.log(res);
+        //console.log(res)
         vm.setData({
           userInfo:res.userInfo
         })

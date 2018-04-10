@@ -92,7 +92,7 @@
       <text class="iconfont icon-shoucang1 {{favoriteOn?'active':''}}"></text>
     </view>
     <view class="lf goods-d-footer-right cf">
-      <button bindtap="calling" class="lf">立即约看</button>
+      <button bindtap="calling" class="lf">拨打电话</button>
       <navigator url="/pages/about/about" class="lf">关于我们</navigator>
     </view>
   </view>

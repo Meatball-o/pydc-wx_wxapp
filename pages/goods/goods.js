@@ -14,7 +14,7 @@ Page({
     console.log(event)
   },
   requestDataList: function () {
-    var vm = this;
+    var vm = this
     if (vm.data.loading || vm._index_loaded) {
       return
     }
@@ -46,13 +46,13 @@ Page({
             dataList: dataList,
             currPage: vm.data.currPage + 1,
           }
-        );
+        )
         vm._index_curPage++
       }
     })
   },
   onShareAppMessage: function (res) {
-    const vm = this;
+    const vm = this
     return {
       title: '蒲悦地产',
       path: '/pages/index/index',

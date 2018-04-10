@@ -17,7 +17,7 @@ Page({
   // 数据
   calling,
   requestDataList() {
-    var vm = this;
+    var vm = this
     var id = vm.data.id || "5ac73e97dd8fa225082fa9af"
     vm.setData({
       loading: true
@@ -48,7 +48,7 @@ Page({
     })
   },
   onShareAppMessage(res) {
-    const vm = this;
+    const vm = this
     return {
       title: '蒲悦地产',
       path: '/pages/index/index',
@@ -77,7 +77,7 @@ Page({
       success: function (res) {
         var {favoriteOn} = res.data.data
         vm.setData({favoriteOn}
-        );
+        )
       },
       complete: function () {
         vm.setData({
@@ -92,8 +92,8 @@ Page({
     var imgArr = vm.data.houseDetail.images.map(function (img,index) {
       return img.url
     })
-    // houseDetail = houseDetail.split(",");
-    // console.log(houseDetail);
+    // houseDetail = houseDetail.split(",")
+    // console.log(houseDetail)
     wx.previewImage({
       current: url, // 当前显示图片的http链接
       urls: imgArr // 需要预览的图片http链接列表
@@ -112,7 +112,7 @@ Page({
 				houseId: vm.data.id
 			},
 			success: function (res) {
-				console.log(res);
+				console.log(res)
 			},
 			complete: function () {
 
@@ -120,7 +120,7 @@ Page({
 		})
 	},
   onLoad: function (param) {
-    var vm = this;
+    var vm = this
     vm.setData({
       id: param.id
     })

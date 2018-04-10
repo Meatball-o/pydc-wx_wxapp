@@ -8,7 +8,7 @@ Page({
 	  calling(this.data.pageData.contact.phone[0])
   },
 	onLoad(){
-        const vm = this;
+        const vm = this
 		wx.request({
 			method: "GET",
 			url: relativeurl + 'api/wxapp/about',
@@ -19,7 +19,7 @@ Page({
 				if (res.statusCode == 200) {
 				  vm.setData({
 						pageData:res.data.data
-					});
+					})
 
 				} else {
 					wx.showModal({

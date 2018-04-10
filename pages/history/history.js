@@ -13,7 +13,7 @@ Page({
     console.log(event)
   },
   requestDataList: function () {
-    var vm = this;
+    var vm = this
     wx.request({
       method: "GET",
       url: relativeurl + 'api/wxapp/user_track',
@@ -24,14 +24,14 @@ Page({
 	      'Authorization': 'JWT ' + getToken()
       },
       success: function (res) {
-        console.log(res);
-        /*var dataList = (vm.data.dataList || []).concat(res.data.data.docs);
+        console.log(res)
+        /*var dataList = (vm.data.dataList || []).concat(res.data.data.docs)
         vm.setData(
           {
             dataList: dataList,
             currPage: vm.data.currPage + 1,
           }
-        );*/
+        )*/
       }
     })
   },

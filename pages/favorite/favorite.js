@@ -13,7 +13,7 @@ Page({
     console.log(event)
   },
   requestDataList: function () {
-    var vm = this;
+    var vm = this
     wx.request({
       method: "GET",
       url: relativeurl + 'api/wxapp/house',
@@ -26,13 +26,13 @@ Page({
         'content-type': 'application/json' // 默认值
       },
       success: function (res) {
-        var dataList = (vm.data.dataList || []).concat(res.data.data.docs);
+        var dataList = (vm.data.dataList || []).concat(res.data.data.docs)
         vm.setData(
           {
             dataList: dataList,
             currPage: vm.data.currPage + 1,
           }
-        );
+        )
       }
     })
   },

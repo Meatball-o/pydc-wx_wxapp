@@ -13,4 +13,4 @@ module.exports.calling = function (phoneNum) {
 	})
 }
 //接口请求路径
-module.exports.relativeurl = 'https://heiliuer.com/pydc_test/';
+module.exports.relativeurl = 'https://heiliuer.com/pydc_test/'
