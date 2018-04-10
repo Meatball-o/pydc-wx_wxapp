@@ -65,3 +65,15 @@ request body:
 [GET] /api/wxapp/feedback
 
 
+#### [009] 房产-搜索 （分页）
+
+[GET] /api/wxapp/search
+
+query params:
+```json
+{
+  "key":"关键字"
+}
+```
+
+
