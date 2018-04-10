@@ -49,3 +49,19 @@ request body:
 [GET] /api/wxapp/favorite
 
 
+#### [008] 反馈-增加
+
+[POST] /api/wxapp/feedback
+
+request body:
+```json
+{
+  "content":"反馈内容"
+}
+```
+
+#### [009] 反馈-列表 （分页）
+
+[GET] /api/wxapp/feedback
+
+
