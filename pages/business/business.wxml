@@ -1,6 +1,6 @@
 <view>
   <view class="business">
-    <view class="business-top">蒲悦地产</view>
+    <view class="business-top">{{pageData.name}}</view>
     <view class="index-tc"></view>
     <view class="business-con-title">
       <text>店铺介绍</text>
@@ -10,18 +10,18 @@
       <text>公司信息</text>
     </view>
     <view class="business-con-title ui-border-b">
-      <text>名称:</text>蒲悦地产
+      <text>名称:</text>{{pageData.name}}
     </view>
     <view class="business-con-title ui-border-b">
-      <text>联系人:</text>丸子
+      <text>联系人:</text>{{pageData.contact.personName}}
     </view>
     <view class="business-con-title ui-border-b">
       <text>联系方式:</text>
-      <text  style="color: red" bindtap="calling">15319518745</text>
+      <text  style="color: red" bindtap="calling">{{pageData.contact.phone[0]}}</text>
     </view>
     <view class="business-con-title">
       <text>公司地址:</text>
-      广东省深圳市塘水围一区
+      {{pageData.address}}
     </view>
 
   </view>
