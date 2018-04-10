@@ -12,3 +12,22 @@
 #### [002] 获取房产详情
 
 [GET] /api/wxapp/house/:id
+
+#### [003] 关于我们
+
+[GET] /api/wxapp/about
+
+#### [004] 足迹-增加
+
+[POST] /api/wxapp/user_track
+
+request body:
+```json
+{
+  houseId:"xxxxx"
+}
+```
+
+#### [005] 足迹-列表
+
+[GET] /api/wxapp/user_track
