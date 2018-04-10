@@ -1,5 +1,5 @@
 var {getToken} = require("../../login")
-var {relativeurl} = require("../../login")
+var {relativeurl} = require("../../util")
 Page({
   data: {
   },
