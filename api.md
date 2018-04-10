@@ -28,6 +28,6 @@ request body:
 }
 ```
 
-#### [005] 足迹-列表
+#### [005] 足迹-列表 （分页）
 
 [GET] /api/wxapp/user_track
