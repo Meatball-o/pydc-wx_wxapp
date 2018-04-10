@@ -12,3 +12,5 @@ module.exports.calling =  function () {
     }
   })
 }
+//接口请求路径
+module.exports.relativeurl = 'https://heiliuer.com/pydc_test/';

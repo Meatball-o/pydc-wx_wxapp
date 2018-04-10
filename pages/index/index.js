@@ -1,6 +1,7 @@
 //index.js
 //获取应用实例
 const {calling} = require('../../util')
+const {relativeurl} = require('../../util')
 const app = getApp()
 
 Page({
@@ -24,7 +25,7 @@ Page({
     })
     wx.request({
       method: "GET",
-      url: 'https://heiliuer.com/api/wxapp/home',
+      url: relativeurl + 'api/wxapp/home',
       dataType: 'json',
       header: {
         'content-type': 'application/json' // 默认值
@@ -75,7 +76,7 @@ Page({
     vm._index_curPage = vm._index_curPage || 1
     wx.request({
       method: "GET",
-      url: 'https://heiliuer.com/api/wxapp/home/user_like',
+      url: relativeurl + 'api/wxapp/home/user_like',
       dataType: 'json',
       data: {
         page: vm._index_curPage,

@@ -1,7 +1,7 @@
 //index.js
 //获取应用实例
+const {relativeurl} = require('../../util')
 const app = getApp()
-
 Page({
   data: {
     paging: 0,
@@ -15,7 +15,7 @@ Page({
     var vm = this;
     wx.request({
       method: "GET",
-      url: 'https://heiliuer.com/api/wxapp/house',
+      url: relativeurl + 'api/wxapp/house',
       dataType: 'json',
       data: {
         page: vm.data.currPage,

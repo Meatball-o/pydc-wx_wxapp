@@ -2,6 +2,7 @@
  * Created by 丸子 on 2018-03-31.
  */
 const {calling} = require('../../util')
+const {relativeurl} = require('../../util')
 const {getToken} = require('../../login')
 Page({
   data: {
@@ -24,7 +25,7 @@ Page({
     })
     wx.request({
       method: "GET",
-      url: 'https://heiliuer.com/api/wxapp/house/' + id,
+      url: relativeurl + 'api/wxapp/house/' + id,
       dataType: 'json',
       header: {
         'Authorization': 'JWT ' + getToken()
@@ -66,7 +67,7 @@ Page({
     console.log('JWT ' + getToken())
     wx.request({
       method: "POST",
-      url: 'https://heiliuer.com/api/wxapp/favorite',
+      url: relativeurl + 'api/wxapp/favorite',
       dataType: 'json',
       header: {
         'Authorization': 'JWT ' + getToken()

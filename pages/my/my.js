@@ -1,4 +1,5 @@
 var {getToken} = require("../../login")
+var {relativeurl} = require("../../login")
 Page({
   data: {
   },
@@ -20,7 +21,7 @@ Page({
     var vm = this
     wx.request({
       method: "PUT",
-      url: 'https://heiliuer.com/api/wxapp/wxuser',
+      url: relativeurl + 'api/wxapp/wxuser',
       dataType: 'json',
       header: {
         'Authorization': 'JWT ' + getToken()
