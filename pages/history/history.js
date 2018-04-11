@@ -24,14 +24,13 @@ Page({
 	      'Authorization': 'JWT ' + getToken()
       },
       success: function (res) {
-        console.log(res)
-        /*var dataList = (vm.data.dataList || []).concat(res.data.data.docs)
+        var dataList = (vm.data.dataList || []).concat(res.data.data.docs)
         vm.setData(
           {
             dataList: dataList,
             currPage: vm.data.currPage + 1,
           }
-        )*/
+        )
       }
     })
   },

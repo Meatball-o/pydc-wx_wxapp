@@ -5,10 +5,10 @@
                wx:key="indexCon">
       <image src="{{item.coverImage.url}}"></image>
       <view class="index-con-mc rt">
-        <em class="index-con-mc-title">{{item.name}}</em>
-        <i class="index-con-mc-address">{{item.mark}}</i>
+        <em class="index-con-mc-title">{{item.house.name}}</em>
+        <i class="index-con-mc-address">{{item.house.mark}}</i>
         <view class="index-con-mc-price">
-          <em>均价¥</em> <i>{{item.averagePrice}}</i>
+          <em>均价¥</em> <i>{{item.house.averagePrice}}</i>
         </view>
       </view>
     </navigator>

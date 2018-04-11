@@ -112,7 +112,11 @@ Page({
 				houseId: vm.data.id
 			},
 			success: function (res) {
-				console.log(res)
+				wx.showToast({
+					title: '足迹添加成功',
+					icon: 'success',
+					duration: 1000
+				})
 			},
 			complete: function () {
 
