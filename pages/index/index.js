@@ -65,14 +65,18 @@ Page({
 	},
 	requestFavoriteList: function () {
 		var vm = this
+		//如果全局变量loading(该方法是否执行完毕) 或者是这个方法内的变量_index_loaded(是否最后一页)任意一个不为true的话，直接跳出该方法
 		if (vm.data.loading || vm._index_loaded) {
 			return
 		}
+		//赋值全部变量的loading为true
 		vm.setData({
 			loading: true
 		})
+		//当前页码值默认为1
 		vm._index_curPage = vm._index_curPage || 1
-		wx.request({
+
+		wx.request({w
 			method: "GET",
 			url: relativeurl + 'api/wxapp/home/user_like',
 			dataType: 'json',
@@ -141,7 +145,7 @@ Page({
 		}
 	},
 	onLoad() {
-		this.requestFavoriteList()
+		//this.requestFavoriteList()
 		this.requestHomeData()
 	}
 })
