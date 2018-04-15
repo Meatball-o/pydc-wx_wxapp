@@ -1,0 +1,23 @@
+<scroll-view scroll-y bindscrolltolower="requestDataList" style="height: 700px;">
+  <view class="goods-title ui-border-b">
+    <text class="py-xl">日期</text>
+    <text class="py-price" bindtap="menuClick">价格</text>
+    <text class="iconfont icon-weibiaoti12"  bindtap="toggleListStyle"></text>
+  </view>
+  <view  class="cf {{isList?'index-con-new':'index-con-m'}}">
+    <navigator wx:for="{{goodsList}}"
+               wx:key="indexCon"
+               url="/pages/goods_detail/goods_detail?id={{item.id}}"
+               class="lf index-con-t-con ui-border-b">
+      <image src="{{item.coverImage.url}}"></image>
+      <view class="index-con-mc rt">
+        <em class="index-con-mc-title">{{item.name}}</em>
+        <i class="index-con-mc-address">{{item.mark}}</i>
+        <view class="index-con-mc-price">
+          <em>均价¥</em> <i>{{item.averagePrice}}</i>
+        </view>
+      </view>
+    </navigator>
+  </view>
+  <view class="index-loading" wx:if="{{loaded===true}}">没有更多数据了...</view>
+</scroll-view>

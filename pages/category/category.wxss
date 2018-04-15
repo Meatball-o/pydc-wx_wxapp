@@ -1,0 +1,19 @@
+.goods-title{
+  height: 80rpx;
+  line-height: 80rpx;
+  width: 750rpx;
+}
+.goods-title text{
+  display: inline-block;
+  width: 33.333%;
+  text-align: center;
+  font-size: 30rpx;
+}
+.goods-title .iconfont{
+
+}
+.goods-title .active{
+  border-bottom: 1px solid red;
+  color: red;
+}
+
