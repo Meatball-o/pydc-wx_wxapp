@@ -97,7 +97,7 @@
     </view>
   </view>
   <text class="index-loadingImg" wx:if="{{loadingImg}}">正在加载...</text>
-  <navigator url="/pages/goods/goods" hover-class="none" class="index-f-phone" style="bottom:230rpx;">
+  <navigator delta="2" open-type='navigateBack' hover-class="none" class="index-f-phone" style="bottom:230rpx;">
     <text class="iconfont icon-fangzi2" style="font-size:46rpx;top:17rpx;left:17rpx;"></text>
   </navigator>
   <button class="index-f-phone" style="bottom:120rpx;" open-type="share">

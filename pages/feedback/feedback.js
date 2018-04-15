@@ -1,43 +1,91 @@
 //index.js
+const {getToken} = require("../../login.js")
 //获取应用实例
+const {relativeurl} = require('../../util')
+
 var app = getApp()
 Page({
   data: {
-    evaContent: ''
+    con: '',
+    wx:'',
+    email:''
   },
   onLoad: function () {
   },
   //事件
-  textBlur: function (e) {
-    if (e.detail && e.detail.value.length > 0) {
-      if (e.detail.value.length < 12 || e.detail.value.length > 500) {
-        //app.func.showToast('内容为12-500个字符','loading',1200)
-      } else {
-        this.setData({
-          evaContent: e.detail.value
-        })
-      }
-    } else {
-      this.setData({
-        evaContent: ''
+  bindInputCon(event) {
+    var vm=this
+    setTimeout(function () {
+      vm.setData({
+        con:event.detail.value
       })
-      evaData.evaContent = ''
-      app.func.showToast('请输入投诉内容', 'loading', 1200)
-    }
+    })
   },
-  //提交事件
-  // evaSubmit: function (eee) {
-  //   var that = this
-  //   //提交(自定义的get方法)
-  //   app.func.req('http://localhost:1111/ffeva/complaint?content='
-  //   '+this.data.evaContent),get,function(res){
-  //   console.log(res)
-  //   if (res.result === '1') {
-  //     //跳转到首页
-  //     app.func.showToast('提交成功', 'loading', 1200)
-  //   } else {
-  //     app.func.showToast('提交失败', 'loading', 1200)
-  //   }
-  // }
-
+  bindInputEmail(event) {
+    var vm=this
+    setTimeout(function () {
+      vm.setData({
+        email:event.detail.value
+      })
+    })
+  },
+  bindInputWx(event) {
+    var vm=this
+    setTimeout(function () {
+      vm.setData({
+        wx:event.detail.value
+      })
+    })
+  },
+  submitFeedback() {
+    var vm = this
+    wx.showLoading({
+      title: '加载中',
+    })
+    wx.request({
+      method: "GET",
+      url: relativeurl + 'api/wxapp/feedback',
+      dataType: 'json',
+      data: {
+        con:vm.data.con,
+        wx:vm.data.wx,
+        email:vm.data.email,
+      },
+      header: {
+        'Authorization': 'JWT ' + getToken()
+      },
+      success(res) {
+        const {success,msg}=res.data
+        if(success){
+          wx.showModal({
+            title: '提示',
+            cancelText:'回首页',
+            content: '反馈成功，感谢您的反馈！',
+            success: function(res) {
+              if (res.confirm) {
+                console.log('用户点击确定')
+              } else if (res.cancel) {
+                wx.navigateBack({
+                  delta: 2
+                })
+              }
+            }
+          })
+        }else{
+          wx.showModal({
+            title: '提示',
+            content: msg||'请求出错',
+            showCancel: false,
+            success: function (res) {
+              if (res.confirm) {
+              }
+            }
+          })
+        }
+      },
+      complete(){
+        wx.hideLoading()
+      }
+    })
+  },
 })

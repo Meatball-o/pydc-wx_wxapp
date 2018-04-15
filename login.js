@@ -13,7 +13,6 @@ module.exports.login = function () {
   wx.login({
     success: function (res) {
       if (res.code) {
-        //console.log(res)
         //发起网络请求
         wx.request({
           method: "POST",

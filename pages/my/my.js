@@ -47,7 +47,6 @@ Page({
         var city = userInfo.city
         var country = userInfo.country
         var _res=res
-        //console.log(res)
         vm.setData({
           userInfo:res.userInfo
         })

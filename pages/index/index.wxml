@@ -12,7 +12,11 @@
    <!--nav-->
    <view class="index-nav">
      <view class="index-nav-con">
-       <navigator wx:for="{{homeData.entries}}" wx:key="index" class="index-con-t-con" url="/pages/goods/goods" hover-class="none">
+       <navigator wx:for="{{homeData.entries}}"
+                  wx:key="index"
+                  class="index-con-t-con"
+                  url="/pages/category/category?id={{item.id||item._id}}"
+                  hover-class="none">
          <view class="iconfont"></view>
          <text>{{item.name}}</text>
        </navigator>

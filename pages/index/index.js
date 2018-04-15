@@ -4,18 +4,14 @@ const {calling, relativeurl} = require('../../util')
 
 Page({
 	data: {
+    // 是否显示面板指示点
 		indicatorDots: true,
 		autoplay: true,
 		interval: 5000,
 		duration: 500,
 	},
 	tapName(event) {
-		console.log(event)
 	},
-	//下拉刷新
-	// onPullDownRefresh: function () {
-	//   wx.showNavigationBarLoading()
-	// },
 	requestHomeData: function () {
 		var vm = this
 		wx.showLoading({
@@ -76,7 +72,7 @@ Page({
 		//当前页码值默认为1
 		vm._index_curPage = vm._index_curPage || 1
 
-		wx.request({w
+		wx.request({
 			method: "GET",
 			url: relativeurl + 'api/wxapp/home/user_like',
 			dataType: 'json',

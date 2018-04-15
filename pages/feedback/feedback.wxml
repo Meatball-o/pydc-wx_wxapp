@@ -1,18 +1,18 @@
 <view>
   <view class="feedback">
-    <form bindsubmit="evaSubmit">
-      <textarea name="evaContent" maxlength="500" value="{{evaContent}}" placeholder="感谢提出建议" bindblur="charChange"/>
+    <form>
+      <textarea name="evaContent" maxlength="500" placeholder="感谢提出建议"bindinput="bindInputCon"/>
       <view class="feedback-con">
         <view class="ui-border-b">
           <text>微信号</text>
-          <input placeholder="请输入微信号（可选）"/>
+          <input bindinput="bindInputWx" placeholder="请输入微信号（可选）"/>
         </view>
         <view>
           <text>邮箱</text>
-          <input placeholder="请输入邮箱地址（可选）"/>
+          <input bindinput="bindInputEmail" placeholder="请输入邮箱地址（可选）"/>
         </view>
       </view>
-      <button formType="submit" disabled="{{subdisabled}}" type="primary" size="mini">提交</button>
+      <button formType="submit" bindtap="submitFeedback" disabled="{{subdisabled}}" type="primary" size="mini">提交</button>
     </form>
   </view>
 </view>

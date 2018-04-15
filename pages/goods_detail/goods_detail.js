@@ -1,7 +1,7 @@
 /**
  * Created by 丸子 on 2018-03-31.
  */
-const {calling,relativeurl} = require('../../util')
+const {calling, relativeurl} = require('../../util')
 const {getToken} = require('../../login')
 Page({
   data: {
@@ -63,7 +63,6 @@ Page({
   },
   requestFavorite() {
     var vm = this
-    console.log('JWT ' + getToken())
     wx.request({
       method: "POST",
       url: relativeurl + 'api/wxapp/favorite',
@@ -75,9 +74,34 @@ Page({
         houseId: vm.data.id
       },
       success: function (res) {
+        const {success,msg}=res.data
+        if (!success) {
+          wx.showModal({
+            title: '提示',
+            content: msg||'请求出错',
+            showCancel: false,
+            success: function (res) {
+              if (res.confirm) {
+              }
+            }
+          })
+          return
+        }
         var {favoriteOn} = res.data.data
-        vm.setData({favoriteOn}
-        )
+        vm.setData({favoriteOn})
+        if (favoriteOn) {
+          wx.showToast({
+            title: '收藏成功',
+            icon: 'success',
+            duration: 1200
+          })
+        } else {
+          wx.showToast({
+            title: '取消收藏成功',
+            icon: 'success',
+            duration: 1200
+          })
+        }
       },
       complete: function () {
         vm.setData({
@@ -88,41 +112,35 @@ Page({
   },
   previewImage(event) {
     var vm = this
-    var url=event.currentTarget.dataset.url
-    var imgArr = vm.data.houseDetail.images.map(function (img,index) {
+    var url = event.currentTarget.dataset.url
+    var imgArr = vm.data.houseDetail.images.map(function (img, index) {
       return img.url
     })
     // houseDetail = houseDetail.split(",")
-    // console.log(houseDetail)
     wx.previewImage({
       current: url, // 当前显示图片的http链接
       urls: imgArr // 需要预览的图片http链接列表
     })
   },
-	addTrack(){
-		var vm = this
-		wx.request({
-			method: "POST",
-			url: relativeurl + 'api/wxapp/user_track',
-			dataType: 'json',
-			header: {
-				'Authorization': 'JWT ' + getToken()
-			},
-			data: {
-				houseId: vm.data.id
-			},
-			success: function (res) {
-				wx.showToast({
-					title: '足迹添加成功',
-					icon: 'success',
-					duration: 1000
-				})
-			},
-			complete: function () {
+  addTrack(){
+    var vm = this
+    wx.request({
+      method: "POST",
+      url: relativeurl + 'api/wxapp/user_track',
+      dataType: 'json',
+      header: {
+        'Authorization': 'JWT ' + getToken()
+      },
+      data: {
+        houseId: vm.data.id
+      },
+      success: function (res) {
+      },
+      complete: function () {
 
-			}
-		})
-	},
+      }
+    })
+  },
   onLoad: function (param) {
     var vm = this
     vm.setData({

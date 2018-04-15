@@ -3,17 +3,30 @@
   line-height: 80rpx;
   width: 750rpx;
 }
-.goods-title text{
+.goods-title .toggle-list{
   display: inline-block;
   width: 33.333%;
   text-align: center;
   font-size: 30rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  position: relative;
 }
-.goods-title .iconfont{
+.goods-title .toggle-list .iconfont{
+  font-size: 24rpx;
+  position: absolute;
+  top:-8rpx;
+  right: 56rpx;
+}
+.goods-title .toggle-list .iconfont{
+  color: #333;
+}
 
+.goods-title .toggle-list.up, .goods-title .toggle-list.up .icon-zhcc_xiangshangjiantou:before{
+  color:red;
 }
-.goods-title .active{
-  border-bottom: 1px solid red;
-  color: red;
+.goods-title .toggle-list.down, .goods-title .toggle-list.down .icon-zhcc_xiangxiajiantou:before{
+  color:red;
 }
+
 

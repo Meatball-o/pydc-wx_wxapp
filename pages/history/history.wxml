@@ -1,9 +1,10 @@
-
 <scroll-view scroll-y bindscrolltolower="requestDataList" style="height: 700px;">
   <view class="index-con-m">
-    <navigator url="/pages/goods_detail/goods_detail?id={{item.id}}" class="cf index-con-t-con ui-border-b" wx:for="{{dataList}}"
+    <navigator url="/pages/goods_detail/goods_detail?id={{item.id}}"
+               class="cf index-con-t-con ui-border-b"
+               wx:for="{{dataList}}"
                wx:key="indexCon">
-      <image src="{{item.coverImage.url}}"></image>
+      <image src="{{item.house.coverImage.url}}"></image>
       <view class="index-con-mc rt">
         <em class="index-con-mc-title">{{item.house.name}}</em>
         <i class="index-con-mc-address">{{item.house.mark}}</i>
@@ -13,4 +14,6 @@
       </view>
     </navigator>
   </view>
+  <view class="index-loading" wx:if="{{loading}}">正在加载...</view>
+  <view class="index-loading" wx:if="{{loaded===true}}">没有更多数据了...</view>
 </scroll-view>

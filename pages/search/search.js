@@ -1,5 +1,6 @@
 //index.js
 //获取应用实例
+const {relativeurl} = require('../../util')
 const app = getApp()
 
 Page({
@@ -14,5 +15,5 @@ Page({
         key:event.detail.value
       })
     })
-  }
+  },
 })

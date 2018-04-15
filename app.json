@@ -1,15 +1,16 @@
 {
   "pages": [
     "pages/index/index",
+    "pages/feedback/feedback",
+    "pages/business/business",
     "pages/search/search",
     "pages/my/my",
     "pages/goods/goods",
     "pages/goods_detail/goods_detail",
     "pages/about/about",
-    "pages/feedback/feedback",
-    "pages/business/business",
     "pages/favorite/favorite",
-    "pages/history/history"
+    "pages/history/history",
+    "pages/category/category"
   ],
   "window": {
     "backgroundTextStyle": "light",

@@ -1,12 +1,18 @@
 <scroll-view scroll-y bindscrolltolower="requestDataList" style="height: 700px;">
   <view class="goods-title ui-border-b">
-    <text class="py-xl">销量</text>
-    <text class="py-price" bindtap="menuClick">价格</text>
-    <text class="iconfont icon-weibiaoti12"></text>
+    <text class="toggle-list py-xl {{date==null?'':(date?'up':'down')}}" data-type="date"  bindtap="toggleListActive">日期
+      <text class="iconfont icon-zhcc_xiangshangjiantou"></text>
+      <text class="iconfont icon-zhcc_xiangxiajiantou" style=" top:8rpx;"></text>
+    </text>
+    <text class="toggle-list py-price {{price==null?'':(price?'up':'down')}}" data-type="price" bindtap="toggleListActive">价格
+      <text class="iconfont icon-zhcc_xiangshangjiantou"></text>
+      <text class="iconfont icon-zhcc_xiangxiajiantou" style=" top:8rpx;"></text>
+    </text>
+    <text class="iconfont  icon-weibiaoti12"  bindtap="toggleListStyle"></text>
   </view>
-  <view class=" index-con-new">
-    <navigator url="/pages/goods_detail/goods_detail?id={{item.id}}" class="cf lf index-con-t-con ui-border-b"
-               wx:for="{{dataList}}"
+  <view  class="cf {{isList?'index-con-new':'index-con-m'}}">
+    <navigator url="/pages/goods_detail/goods_detail?id={{item.id}}" class="lf index-con-t-con ui-border-b"
+               wx:for="{{goodsList}}"
                wx:key="indexCon">
       <image src="{{item.coverImage.url}}"></image>
       <view class="index-con-mc rt">
