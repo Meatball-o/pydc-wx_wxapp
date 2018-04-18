@@ -1,89 +1,91 @@
 <!--search.wxml-->
-<scroll-view scroll-y bindscrolltolower="requestFavoriteList" style="height: 700px;">
+<scroll-view scroll-y bindscrolltolower="requestFavoriteList" style="height: 100%">
   <!--搜索-->
- <view wx:if="homeData">
-   <view class="index-head">
-     <navigator class="index-head-txt" url="/pages/search/search" hover-class="none">
-       <text class="iconfont icon-sousuo1"></text>
-       请输入区域，版块或楼盘
-     </navigator>
-     <image style="width: 100%" src="{{homeData.banner[0].imageUrl}}"></image>
-   </view>
-   <!--nav-->
-   <view class="index-nav">
-     <view class="index-nav-con">
-       <navigator wx:for="{{homeData.entries}}"
-                  wx:key="index"
-                  class="index-con-t-con"
-                  url="/pages/category/category?id={{item.id||item._id}}"
-                  hover-class="none">
-         <view class="iconfont"></view>
-         <text>{{item.name}}</text>
-       </navigator>
-       <navigator class="index-con-t-con" url="/pages/about/about" hover-class="none">
-         <view class="iconfont icon-haofangtuo400iconfontwodeershoufang"></view>
-         <text>关于我们</text>
-       </navigator>
-     </view>
-   </view>
-   <!--头条新闻-->
-   <view class="index-tc"></view>
-   <view class="index-xw-p cf">
-     <text class="iconfont icon-laba2 lf"></text>
-     <swiper class="index-xw swiper-no-swiping lf"
-             interval="{{interval}}"
-             duration="{{duration}}"
-             vertical="true">
-       <swiper-item  wx:for="{{homeData.recommendList}}"
+  <view wx:if="homeData">
+    <view class="index-head">
+      <navigator class="index-head-txt" url="/pages/search/search" hover-class="none">
+        <text class="iconfont icon-sousuo1"></text>
+        请输入区域，版块或楼盘
+      </navigator>
+      <image style="width: 100%" src="{{homeData.banner[0].imageUrl}}"></image>
+    </view>
+    <!--nav-->
+    <view class="index-nav">
+      <view class="index-nav-con">
+        <navigator wx:for="{{homeData.entries}}"
+                   wx:key="index"
+                   class="index-con-t-con"
+                   url="/pages/category/category?id={{item.id||item._id}}"
+                   hover-class="none">
+          <view class="iconfont"></view>
+          <text>{{item.name}}</text>
+        </navigator>
+        <navigator class="index-con-t-con" url="/pages/about/about" hover-class="none">
+          <view class="iconfont icon-haofangtuo400iconfontwodeershoufang"></view>
+          <text>关于我们</text>
+        </navigator>
+      </view>
+    </view>
+    <!--头条新闻-->
+    <view class="index-tc"></view>
+    <view class="index-xw-p cf">
+      <text class="iconfont icon-laba2 lf"></text>
+      <swiper class="index-xw swiper-no-swiping lf"
+              style="pointer-events: none;"
+              interval="{{interval}}"
+              duration="{{duration}}"
+              autoplay="{{autoplay}}"
+              vertical="true">
+        <swiper-item wx:for="{{homeData.recommendList}}"
                      wx:key="indexImgs"
                      class="lf"
                      style="width: 80%;padding-left: 30rpx"
                      vertical="true">
-         <navigator url=""  hover-class="none" class=" index-xw-con">
-           <view>{{item.name}}</view>
-         </navigator>
-       </swiper-item>
-     </swiper>
-     <text class="iconfont icon-youjiantou1 rt"></text>
-   </view>
-   <view class="index-tc"></view>
-   <!--轮播-->
-   <swiper  style="height: 330rpx" autoplay="{{autoplay}}" interval="{{interval}}"
-           duration="{{duration}}">
-     <swiper-item wx:for="{{homeData.banner2}}" wx:key="indexImgs">
-       <navigator class="index-banner" hover-class="none">
-         <image src="{{item.imageUrl}}" class="slide-image" width="355" height="150"/>
-       </navigator>
-     </swiper-item>
-   </swiper>
-   <!--主体-->
-   <view class="index-tc"></view>
-   <view class="index-con-t">
-     <view class="index-con-b-title cf ui-border-b" style="margin-bottom: 34rpx">
-       <text class="lf">为您推荐</text>
-       <text class="iconfont icon-youjiantou1 rt"></text>
-       <navigator class="rt" url="/pages/goods/goods" hover-class="none">查看更多</navigator>
-     </view>
-     <navigator hover-class="none"  style="padding: 0"
-                wx:for="{{homeData.recommendList}}"
-                wx:key="index"
-                url="/pages/goods_detail/goods_detail?id={{item.id}}"
-                class="cf index-con-t-con">
-       <image
-         src="{{item.coverImage.url}}"></image>
-       <view class="index-con-c">
-         <text class="index-con-title">{{item.name}}</text>
-         <text class="index-con-address">{{item.mark}}</text>
-         <view class="index-con-price">
-           <text>均价¥</text>
-           <text>{{item.sell/10000}}</text>
-         </view>
-       </view>
-     </navigator>
-   </view>
- </view>
+          <navigator url="" hover-class="none" class=" index-xw-con">
+            <view>{{item.name}}</view>
+          </navigator>
+        </swiper-item>
+      </swiper>
+      <text class="iconfont icon-youjiantou1 rt"></text>
+    </view>
+    <view class="index-tc"></view>
+    <!--轮播-->
+    <swiper style="height: 330rpx" autoplay="{{autoplay}}" interval="{{interval}}"
+            duration="{{duration}}">
+      <swiper-item wx:for="{{homeData.banner2}}" wx:key="indexImgs">
+        <navigator class="index-banner" hover-class="none">
+          <image src="{{item.imageUrl}}" class="slide-image" width="355" height="150"/>
+        </navigator>
+      </swiper-item>
+    </swiper>
+    <!--主体-->
+    <view class="index-tc"></view>
+    <view class="index-con-t">
+      <view class="index-con-b-title cf ui-border-b" style="margin-bottom: 34rpx">
+        <text class="lf">为您推荐</text>
+        <text class="iconfont icon-youjiantou1 rt"></text>
+        <navigator class="rt" url="/pages/goods/goods" hover-class="none">查看更多</navigator>
+      </view>
+      <navigator hover-class="none" style="padding: 0"
+                 wx:for="{{homeData.recommendList}}"
+                 wx:key="index"
+                 url="/pages/goods_detail/goods_detail?id={{item.id}}"
+                 class="cf index-con-t-con">
+        <image
+          src="{{item.coverImage.url}}"></image>
+        <view class="index-con-c">
+          <text class="index-con-title">{{item.name}}</text>
+          <text class="index-con-address">{{item.mark}}</text>
+          <view class="index-con-price">
+            <text>均价¥</text>
+            <text>{{item.sell/10000}}</text>
+          </view>
+        </view>
+      </navigator>
+    </view>
+  </view>
   <view class="index-tc"></view>
-  <view class="index-con-m">
+  <view class="index-con-m"  style="margin-top: 0rpx;">
     <view class="index-con-b-title cf ui-border-b">
       <text class="lf">猜您喜欢</text>
     </view>
@@ -102,7 +104,7 @@
     </navigator>
   </view>
   <view class="index-loading" wx:if="{{loading}}">正在加载...</view>
-  <view class="index-loading" wx:if="{{loaded===true}}">没有更多数据了...</view>
+  <view class="index-loading"  wx:if="{{!loading&&loaded===true}}">没有更多数据了...</view>
   <view class="index-f-phone" style="line-height: 56rpx">
     <text bindtap="calling" class="iconfont icon-dianhua3"></text>
   </view>

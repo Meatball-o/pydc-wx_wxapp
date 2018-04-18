@@ -1,14 +1,19 @@
-<scroll-view scroll-y bindscrolltolower="requestDataList" style="height: 700px;">
+<scroll-view scroll-y bindscrolltolower="requestSearch" style="height:100%;">
   <view class="goods-title ui-border-b">
-    <text class="py-xl">日期</text>
-    <text class="py-price" bindtap="menuClick">价格</text>
-    <text class="iconfont icon-weibiaoti12"  bindtap="toggleListStyle"></text>
+    <text class="toggle-list py-xl {{date==null?'':(date?'up':'down')}}" data-type="date"  bindtap="toggleListActive">日期
+      <text class="iconfont icon-zhcc_xiangshangjiantou"></text>
+      <text class="iconfont icon-zhcc_xiangxiajiantou" style=" top:8rpx;"></text>
+    </text>
+    <text class="toggle-list py-price {{price==null?'':(price?'up':'down')}}" data-type="price" bindtap="toggleListActive">价格
+      <text class="iconfont icon-zhcc_xiangshangjiantou"></text>
+      <text class="iconfont icon-zhcc_xiangxiajiantou" style=" top:8rpx;"></text>
+    </text>
+    <text class="iconfont-list iconfont {{isList?'icon-grid2':'icon-listview'}}"  bindtap="toggleListStyle"></text>
   </view>
   <view  class="cf {{isList?'index-con-new':'index-con-m'}}">
-    <navigator wx:for="{{goodsList}}"
-               wx:key="indexCon"
-               url="/pages/goods_detail/goods_detail?id={{item.id}}"
-               class="lf index-con-t-con ui-border-b">
+    <navigator url="/pages/goods_detail/goods_detail?id={{item.id}}" class="lf index-con-t-con ui-border-b"
+               wx:for="{{goodsList}}"
+               wx:key="indexCon">
       <image src="{{item.coverImage.url}}"></image>
       <view class="index-con-mc rt">
         <em class="index-con-mc-title">{{item.name}}</em>
@@ -19,5 +24,6 @@
       </view>
     </navigator>
   </view>
-  <view class="index-loading" wx:if="{{loaded===true}}">没有更多数据了...</view>
+  <view class="index-loading" wx:if="{{loading}}">正在加载...</view>
+  <view class="index-loading"  wx:if="{{!loading&&loaded===true}}">没有更多数据了...</view>
 </scroll-view>

@@ -2,11 +2,9 @@
  * Created by 丸子 on 2018-03-31.
  */
 const {relativeurl} = require('../../util')
-const app = getApp()
 
 Page({
   data: {
-    paging: 0,
     date: true,
     price: null
   },
@@ -25,6 +23,7 @@ Page({
       })
     }
     vm._index_curPage = 1
+    vm._index_loaded=false
     vm.requestSearch()
   },
   toggleListStyle(){
@@ -123,6 +122,6 @@ Page({
     vm.setData({
       key: param.key
     })
-    this.requestSearch()
+    vm.requestSearch()
   }
 })

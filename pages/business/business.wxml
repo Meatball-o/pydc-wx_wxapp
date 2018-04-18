@@ -1,6 +1,6 @@
 <view>
   <view class="business">
-    <view class="business-top">{{pageData.name}}</view>
+    <view class="business-top">{{requestData.name}}</view>
     <view class="index-tc"></view>
     <view class="business-con-title">
       <text>店铺介绍</text>
@@ -10,18 +10,18 @@
       <text>公司信息</text>
     </view>
     <view class="business-con-title ui-border-b">
-      <text>名称:</text>{{pageData.name}}
+      <text>名称:</text>{{requestData.name}}
     </view>
     <view class="business-con-title ui-border-b">
-      <text>联系人:</text>{{pageData.contact.personName}}
+      <text>联系人:</text>{{requestData.contact.personName}}
     </view>
     <view class="business-con-title ui-border-b">
       <text>联系方式:</text>
-      <text  style="color: red" bindtap="calling">{{pageData.contact.phone[0]}}</text>
+      <text  style="color: red" bindtap="calling">{{requestData.contact.phone[0]}}</text>
     </view>
     <view class="business-con-title">
       <text>公司地址:</text>
-      {{pageData.address}}
+      {{requestData.address}}
     </view>
 
   </view>

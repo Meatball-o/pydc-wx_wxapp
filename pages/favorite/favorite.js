@@ -5,7 +5,6 @@ const {getToken} = require('../../login')
 const app = getApp()
 Page({
   data: {
-    paging: 0,
     currPage: 1,//页码
     totalPage: 5,// 总页码
   },
@@ -69,7 +68,7 @@ Page({
           }
         })
       },
-      complete: function () {
+      complete() {
         vm.setData({
           loading: false
         })

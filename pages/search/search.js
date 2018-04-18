@@ -5,7 +5,6 @@ const app = getApp()
 
 Page({
   data:{
-    focus:true,
     key:""
   },
   bindInput(event) {
@@ -16,4 +15,9 @@ Page({
       })
     })
   },
+  bindconfirm(event){
+    vm.setData({
+      value:event.detail.value
+    })
+  }
 })

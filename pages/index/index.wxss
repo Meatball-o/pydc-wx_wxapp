@@ -26,7 +26,7 @@
   width: 72%;
   background: rgba(245, 245, 245, .6);
   height: 56rpx;
-  line-height: 64rpx;
+  line-height: 60rpx;
   border-radius:28rpx;
   margin-left: 14%;
   text-align: center;

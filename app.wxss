@@ -14,7 +14,6 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
 .icon-dianhua2:before { content: "\e604"; }
 
 .icon-huidaodingbu:before { content: "\e600"; }
@@ -45,7 +44,7 @@
 
 .icon-weibiaoti12:before { content: "\e61e"; }
 
-.icon-grid1:before { content: "\e635"; }
+.icon-grid1:before { content: "\e635";}
 
 .icon-fangzihouse129:before { content: "\e644"; }
 
@@ -250,6 +249,7 @@ button::after {
 
 page{
   font-size:28rpx;
+  height: 100%;
   background-color: #fff;
   font-family: -apple-system-font, Helvetica Neue, Helvetica, sans-serif;
 }
@@ -279,7 +279,10 @@ page{
   padding-left:30rpx;
   padding-right: 30rpx;
   display: block;
-  margin-top: 30rpx;
+  margin-top: 80rpx;
+}
+.index-con-new{
+  margin-top: 110rpx;
 }
 .index-con-m .index-con-t-con{
   width:100%;
@@ -323,13 +326,14 @@ page{
 .index-con-new .index-con-t-con{
   width: 330rpx;
   box-sizing: border-box;
+  padding-top: 20rpx;
 }
 .index-con-new .index-con-t-con:nth-child(2n-1){
   margin-right: 30rpx;
 }
 .index-con-new .index-con-mc{
   width: 330rpx;
-  height: 150rpx;
+  padding-bottom: 20rpx;
 }
 
 

@@ -5,9 +5,6 @@ const {calling, relativeurl} = require('../../util')
 const {getToken} = require('../../login')
 Page({
   data: {
-    paging: 0,
-    currPage: 1,//页码
-    totalPage: 5,// 总页码
     indicatorDots: true,
     autoplay: true,
     interval: 5000,
@@ -15,8 +12,13 @@ Page({
     favoriteOn: false
   },
   // 数据
-  calling,
+  calling(){
+    calling(this.data.pageData.contact.phone[0])
+  },
   requestDataList() {
+    wx.showLoading({
+      title: '加载中',
+    })
     var vm = this
     var id = vm.data.id || "5ac73e97dd8fa225082fa9af"
     vm.setData({
@@ -40,14 +42,18 @@ Page({
           title: vm.data.houseDetail.name//页面标题为路由参数
         })
       },
-      complete: function () {
+      complete() {
         vm.setData({
           loadingImg: false
         })
+        wx.hideLoading()
       }
     })
   },
   onShareAppMessage(res) {
+    wx.showLoading({
+      title: '加载中',
+    })
     const vm = this
     return {
       title: '蒲悦地产',
@@ -58,11 +64,17 @@ Page({
       },
       fail: function (res) {
         // 转发失败
+      },
+      complete(){
+        wx.hideLoading()
       }
     }
   },
   requestFavorite() {
     var vm = this
+    wx.showLoading({
+      title: '加载中',
+    })
     wx.request({
       method: "POST",
       url: relativeurl + 'api/wxapp/favorite',
@@ -74,11 +86,12 @@ Page({
         houseId: vm.data.id
       },
       success: function (res) {
-        const {success,msg}=res.data
+        debugger
+        const {success, msg} = res.data
         if (!success) {
           wx.showModal({
             title: '提示',
-            content: msg||'请求出错',
+            content: msg || '请求出错',
             showCancel: false,
             success: function (res) {
               if (res.confirm) {
@@ -103,10 +116,11 @@ Page({
           })
         }
       },
-      complete: function () {
+      complete() {
         vm.setData({
           loadingImg: false
         })
+        wx.hideLoading()
       }
     })
   },
@@ -123,6 +137,9 @@ Page({
     })
   },
   addTrack(){
+    wx.showLoading({
+      title: '加载中',
+    })
     var vm = this
     wx.request({
       method: "POST",
@@ -136,12 +153,12 @@ Page({
       },
       success: function (res) {
       },
-      complete: function () {
-
+      complete(){
+        wx.hideLoading()
       }
     })
   },
-  onLoad: function (param) {
+  onLoad(param) {
     var vm = this
     vm.setData({
       id: param.id

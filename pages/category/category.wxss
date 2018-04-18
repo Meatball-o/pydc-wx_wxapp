@@ -2,18 +2,56 @@
   height: 80rpx;
   line-height: 80rpx;
   width: 750rpx;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #fff;
+  z-index: 999;
 }
-.goods-title text{
+.goods-title .toggle-list{
   display: inline-block;
   width: 33.333%;
   text-align: center;
   font-size: 30rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  position: relative;
 }
-.goods-title .iconfont{
+.iconfont-list{
+  display: inline-block;
+  width: 33.333%;
+  text-align: center;
+  height: 80rpx;
+  line-height: 80rpx;
+}
+.goods-title .toggle-list .iconfont{
+  font-size: 24rpx;
+  position: absolute;
+  top:-8rpx;
+  right: 56rpx;
+}
+.goods-title .toggle-list .iconfont{
+  color: #333;
+}
+.goods-title .toggle-list.up, .goods-title .toggle-list.up .icon-zhcc_xiangshangjiantou:before{
+  color:red;
+}
+.goods-title .toggle-list.down, .goods-title .toggle-list.down .icon-zhcc_xiangxiajiantou:before{
+  color:red;
+}
+.icon-listview:before {
+  content:"\e67b";
+  font-size: 36rpx;
+  color: #000;
+  font-weight: bold;
+}
 
+.icon-grid2:before {
+  content: "\e624";
+  color: #000;
+  font-size: 34rpx;
 }
-.goods-title .active{
-  border-bottom: 1px solid red;
-  color: red;
-}
+
+
+
 

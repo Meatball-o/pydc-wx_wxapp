@@ -1,22 +1,22 @@
 {
   "pages": [
     "pages/index/index",
+    "pages/my/my",
+    "pages/search/search",
+    "pages/goods/goods",
     "pages/feedback/feedback",
     "pages/business/business",
-    "pages/search/search",
-    "pages/my/my",
-    "pages/goods/goods",
     "pages/goods_detail/goods_detail",
     "pages/about/about",
     "pages/favorite/favorite",
-    "pages/history/history",
     "pages/category/category"
   ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#33ba99",
     "navigationBarTitleText": "浦悦地产",
-    "navigationBarTextStyle": "black"
+    "navigationBarTextStyle": "black",
+    "enablePullDownRefresh":"false"
   },
   "tabBar": {
     "color":"#000",

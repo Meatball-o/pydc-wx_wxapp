@@ -2,19 +2,35 @@
  * Created by 丸子 on 2018-03-31.
  */
 const {relativeurl} = require('../../util')
-const app = getApp()
 
 Page({
   data: {
-    paging: 0,
+    date: true,
+    price: null
+  },
+  toggleListActive(event){
+    const vm = this
+    const {type} = event.currentTarget.dataset
+    if (type == "date") {
+      vm.setData({
+        price: null,
+        date: !vm.data.date
+      })
+    } else if (type == "price") {
+      vm.setData({
+        date: null,
+        price: !vm.data.price
+      })
+    }
+    vm._index_curPage = 1
+    vm._index_loaded=false
+    vm.requestSearch()
   },
   toggleListStyle(){
-    var vm=this
+    var vm = this
     vm.setData({
-      isList:!vm.data.isList
+      isList: !vm.data.isList
     })
-  },
-  tapName: function (event) {
   },
   requestSearch() {
     var vm = this
@@ -25,11 +41,16 @@ Page({
       loading: true
     })
     vm._index_curPage = vm._index_curPage || 1
+    const {date, price} = vm.data
     wx.request({
       method: "GET",
       url: relativeurl + 'api/wxapp/search',
       dataType: 'json',
       data: {
+        sort: {
+          createTime: date,
+          averagePrice: price
+        },
         categoryId: vm.data.id,
         page: vm._index_curPage,
         limit: 10
@@ -70,7 +91,7 @@ Page({
           }
         })
       },
-      complete: function () {
+      complete() {
         vm.setData({
           loading: false
         })
@@ -94,8 +115,8 @@ Page({
   onLoad(param) {
     var vm = this
     vm.setData({
-      id:param.id
+      id: param.id
     })
-    this.requestSearch()
+    vm.requestSearch()
   }
 })

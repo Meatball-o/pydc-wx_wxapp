@@ -4,6 +4,9 @@ Page({
   data: {
   },
   onShareAppMessage: function (res) {
+    wx.showLoading({
+      title: '加载中',
+    })
     const vm = this
     return {
       title: '蒲悦地产',
@@ -14,10 +17,16 @@ Page({
       },
       fail: function (res) {
         // 转发失败
+      },
+      complete(){
+        wx.hideLoading()
       }
     }
   },
   requestUserInfo(res) {
+    wx.showLoading({
+      title: '加载中',
+    })
     var vm = this
     wx.request({
       method: "PUT",
@@ -31,7 +40,8 @@ Page({
       },
       success: function (res) {
       },
-      complete: function () {
+      complete(){
+        wx.hideLoading()
       }
     })
   },
