@@ -86,7 +86,6 @@ Page({
         houseId: vm.data.id
       },
       success: function (res) {
-        debugger
         const {success, msg} = res.data
         if (!success) {
           wx.showModal({
