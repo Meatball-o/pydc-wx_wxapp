@@ -1,7 +1,7 @@
 <view class="goods_detail">
   <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
     <swiper-item wx:for="{{houseDetail.images}}" wx:key="{{index}}">
-      <image bindtap="previewImageTop" data-url="{{item.url}}"  src="{{item.url}}" class="slide-image"/>
+      <image  bindtap="previewImageTop" data-url="{{item.url}}"  src="{{item.url}}" class="slide-image"/>
     </swiper-item>
   </swiper>
   <view class="goods-d-text">

@@ -5,10 +5,10 @@
     "pages/search/search",
     "pages/goods/goods",
     "pages/category/category",
+    "pages/about/about",
     "pages/goods_detail/goods_detail",
     "pages/feedback/feedback",
     "pages/business/business",
-    "pages/about/about",
     "pages/favorite/favorite",
     "pages/history/history"
   ],

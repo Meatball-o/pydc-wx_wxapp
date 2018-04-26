@@ -7,7 +7,7 @@ Page({
     // 是否显示面板指示点
     indicatorDots: true,
     autoplay: true,
-    interval: 5000,
+    interval: 3000,
     duration: 500,
   },
   tapName(event) {
@@ -58,6 +58,12 @@ Page({
         })
       }
     })
+  },
+  ce(){
+   console.log(111);
+  },
+  ce1(){
+    console.log(222);
   },
   requestFavoriteList() {
     var vm = this

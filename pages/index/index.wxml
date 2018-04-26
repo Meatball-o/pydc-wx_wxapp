@@ -31,7 +31,6 @@
     <view class="index-xw-p cf">
       <text class="iconfont icon-laba2 lf"></text>
       <swiper class="index-xw swiper-no-swiping lf"
-              style="pointer-events: none;"
               interval="{{interval}}"
               duration="{{duration}}"
               autoplay="{{autoplay}}"
@@ -39,7 +38,9 @@
         <swiper-item wx:for="{{homeData.recommendList}}"
                      wx:key="indexImgs"
                      class="lf"
-                     style="width: 80%;padding-left: 30rpx"
+                     style="width: 80%;padding-left: 30rpx;"
+                     catchtouchmove="ce"
+                     bindtap="ce1"
                      vertical="true">
           <navigator url="" hover-class="none" class=" index-xw-con">
             <view>{{item.name}}</view>
